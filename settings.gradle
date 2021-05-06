@@ -1,0 +1,2 @@
+rootProject.name = "Lotech"
+include ':app'
