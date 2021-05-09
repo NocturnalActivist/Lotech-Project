@@ -28,23 +28,21 @@
             android:id="@+id/input_name_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
             app:errorEnabled="true"
-            app:passwordToggleEnabled="true"
-            app:passwordToggleTint="@color/pink_Light">
+            android:layout_marginTop="16dp">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/name"
-                android:inputType="textPassword"/>
+                android:inputType="textPersonName"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_email_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
             app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email_signup"
@@ -58,7 +56,8 @@
             android:id="@+id/input_password_signup"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
+            android:layout_marginTop="10dp"
+
             app:errorEnabled="true"
             app:passwordToggleEnabled="true"
             app:passwordToggleTint="@color/pink_Light">
@@ -80,13 +79,17 @@
 
         <TextView
             android:id="@+id/view_login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
+            android:padding="10dp"
+            android:onClick="backToLoginPage"
+            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:layout_marginTop="16dp"
             android:gravity="center"
             android:textColor="@color/white"
-            android:text="@string/back_to_login"/>
+            android:text="@string/back_to_login"
+            tools:ignore="OnClick" />
 
     </LinearLayout>
 

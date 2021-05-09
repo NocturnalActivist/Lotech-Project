@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Lotech</string>
     <string name="title_activity_login">LoginActivity</string>
@@ -12,7 +13,7 @@
     <string name="email">E-mail</string>
     <string name="password">Password</string>
     <string name="login">Login</string>
-    <string name="dont_have_account">I do not have account yet</string>
+    <string name="dont_have_account">I don\'\t have account yet</string>
     <string name="signup">Sign Up</string>
     <string name="back_to_login">Back To Login</string>
     <string name="name">Name</string>
