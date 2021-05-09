@@ -12,10 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pink">
         <activity android:name=".ui.activity.ForgotPasswordActivity" />
-        <activity android:name=".SignUpActivity" />
-        <activity android:name=".MainActivity" />
-        <activity android:name=".SplashScreenActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".ui.activity.SignUpActivity" />
+        <activity android:name=".ui.activity.MainActivity" />
+        <activity android:name=".ui.activity.SplashScreenActivity" />
+        <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -7,7 +7,7 @@
     android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
     android:theme="@style/Theme.Pink"
-    tools:context=".LoginActivity">
+    tools:context=".ui.activity.LoginActivity">
 
     <LinearLayout
         android:layout_width="match_parent"

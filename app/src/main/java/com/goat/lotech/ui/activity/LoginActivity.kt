@@ -1,11 +1,10 @@
-package com.goat.lotech
+package com.goat.lotech.ui.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.goat.lotech.databinding.ActivityLoginBinding
-import com.goat.lotech.ui.activity.ForgotPasswordActivity
 
 class LoginActivity : AppCompatActivity() {
 
