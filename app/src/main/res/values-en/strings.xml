@@ -22,4 +22,6 @@
     <string name="konfirmasi_text">Konfirmasi email anda, kemudian silahkan melakukan pengubahan kata sandi melalui email yang Lotech kirimkan pada email anda</string>
     <string name="kembali_ke_halaman_login">Kembali ke halaman Login</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="registered">Anda telah terdaftar</string>
+    <string name="messageRegistered">Silahkan konfirmasi akun anda melalui email yang telah Lotech kirimkan pada email anda</string>
 </resources>
