@@ -35,4 +35,7 @@
     <string name="value_fiture">4 Fiture</string>
     <string name="informasi_kesehatan">Informasi Kesehatan</string>
     <string name="detecting_calorie">CEK KALORI</string>
+    <string name="home_menu">Home</string>
+    <string name="chat_menu">Chat</string>
+    <string name="profile_menu">Profile</string>
 </resources>
