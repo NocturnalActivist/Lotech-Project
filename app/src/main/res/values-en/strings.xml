@@ -22,4 +22,13 @@
     <string name="konfirmasi_text">Konfirmasi email anda, kemudian silahkan melakukan pengubahan kata sandi melalui email yang Lotech kirimkan pada email anda</string>
     <string name="kembali_ke_halaman_login">Kembali ke halaman Login</string>
     <string name="forgot_password">Forgot Password</string>
+    <string name="female">Female</string>
+    <string name="male">Male</string>
+    <string name="gender">Gender</string>
+    <string name="height">Height</string>
+    <string name="weight">Weight</string>
+    <string name="date">Date</string>
+    <string name="birth_date">Birth Date</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
