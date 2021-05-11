@@ -6,13 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.Pink"
-    android:fitsSystemWindows="true"
     tools:context=".ui.activity.SignUpActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
         android:orientation="vertical">
@@ -20,6 +18,7 @@
             android:id="@+id/image_login"
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:contentDescription="@string/image"
             android:layout_gravity="center_horizontal"
             android:layout_margin="16dp"
             android:src="@drawable/ic_baseline_person_24"/>
@@ -48,6 +47,7 @@
             <ImageButton
                 android:id="@+id/btn_once_date"
                 android:layout_width="50dp"
+                android:contentDescription="@string/button"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:src="@drawable/ic_baseline_date_range_white"/>
@@ -72,15 +72,20 @@
             android:layout_height="wrap_content"
             android:background="#FBE9E7">
             <RadioButton
+                android:id="@+id/male"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#4b636e"
-                android:text="@string/female"/>
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/male"
+                tools:ignore="OnClick" />
             <RadioButton
+                android:id="@+id/female"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#4b636e"
-                android:text="@string/male"/>
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/female"/>
         </RadioGroup>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -146,6 +151,13 @@
                 android:hint="@string/password"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
 
         <Button
             android:id="@+id/btn_signup"
