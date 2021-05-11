@@ -37,4 +37,10 @@
     <string name="home_menu">Home</string>
     <string name="chat_menu">Chat</string>
     <string name="profile_menu">Profile</string>
+    <string name="email_error">Mohon isi email dengan benar</string>
+    <string name="confirmedForgotPassowrdTitle">Berhasil Terkonfirmasi</string>
+    <string name="messageConfirmed">Silahkan cek email yang telah kamu, Lotech sudah mengirimkan email untuk mengubah password</string>
+    <string name="button">button</string>
+    <string name="registered">Berhasil mendaftar</string>
+    <string name="messageRegistered">Silahkan verifikasi akun anda melalui email yang telah Lotech kirimkan ke email anda</string>
 </resources>

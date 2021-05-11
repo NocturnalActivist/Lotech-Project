@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "312594161590",
+    "project_id": "goat-bangkit",
+    "storage_bucket": "goat-bangkit.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:312594161590:android:a02f45405aedda6b352b17",
+        "android_client_info": {
+          "package_name": "com.goat.lotech"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "312594161590-g3brpir38pv33nnq4t1uihegerf4qmui.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.goat.lotech",
+            "certificate_hash": "a16abcc749092fbbc99068eb523c8ad2f0bcf6ac"
+          }
+        },
+        {
+          "client_id": "312594161590-52ndm8qu0qerhkad09o30jel0oqoik0g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAaqN13ez-ZfdfJD0qPngow5UnQwQHz9cM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "312594161590-52ndm8qu0qerhkad09o30jel0oqoik0g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
