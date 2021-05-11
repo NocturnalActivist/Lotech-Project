@@ -13,4 +13,6 @@
     <color name="pink_primary2">#FF80AB</color>
     <color name="pink_Dark2">#C94F7C</color>
     <color name="pink_Light2">#FFB2DD</color>
+    <color name="grey">#EEEEEE</color>
+    <color name="grey_dark">#BCBCBC</color>
 </resources>
