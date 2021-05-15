@@ -24,7 +24,7 @@
     <string name="female">Perempuan</string>
     <string name="male">Laki-laki</string>
     <string name="gender">Jenis Kelamin</string>
-    <string name="height">Tinggi</string>
+    <string name="height">Tinggi Badan</string>
     <string name="weight">Berat Badan</string>
     <string name="date">Tanggal</string>
     <string name="birth_date">Tanggal Lahir</string>
@@ -37,4 +37,13 @@
     <string name="home_menu">Home</string>
     <string name="chat_menu">Chat</string>
     <string name="profile_menu">Profile</string>
+    <string name="cth_name">GOAT</string>
+    <string name="email_error">Mohon isi E-mail dengan benar</string>
+    <string name="confirmedForgotPassowrdTitle">Berhasil Terkonfirmasi</string>
+    <string name="messageConfirmed">Silahkan cek E-mail kamu, Lotech telah mengirimkan email untuk mengubah password</string>
+    <string name="registered">Berhasil mendaftar</string>
+    <string name="messageRegistered">Silahakn verifikasi akun anda melalui email yang telah Lotech kirimkan ke E-mail kamu</string>
+    <string name="photo_profil">Photo Profil</string>
+    <string name="food_quality">FOOD QUALITY</string>
+    <string name="lifestyle">LIFESTYLE</string>
 </resources>

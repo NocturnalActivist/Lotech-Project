@@ -7,7 +7,7 @@
         android:title="@string/home_menu" />
 
     <item
-        android:id="@+id/navigation_dashboard"
+        android:id="@+id/navigation_chat"
         android:icon="@drawable/ic_baseline_chat_bubble_24"
         android:title="@string/chat_menu" />
 

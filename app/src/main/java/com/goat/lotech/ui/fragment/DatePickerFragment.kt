@@ -1,4 +1,4 @@
-package com.goat.lotech.ui.activity
+package com.goat.lotech.ui.fragment
 
 import android.app.DatePickerDialog
 import android.app.Dialog

@@ -47,7 +47,7 @@
             <ImageButton
                 android:id="@+id/btn_once_date"
                 android:layout_width="50dp"
-                android:contentDescription="@string/button"
+                android:contentDescription="@string/birth_date"
                 android:layout_height="wrap_content"
                 style="@style/Widget.AppCompat.Button.Colored"
                 android:src="@drawable/ic_baseline_date_range_white"/>
