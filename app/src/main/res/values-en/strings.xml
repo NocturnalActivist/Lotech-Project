@@ -38,7 +38,7 @@
     <string name="home_menu">Home</string>
     <string name="chat_menu">Chat</string>
     <string name="profile_menu">Profile</string>
-    <string name="cth_name">GOAT</string>
+    <string name="cth_name">Greates of All Time</string>
     <string name="email_error">Mohon isi E-mail dengan benar</string>
     <string name="confirmedForgotPassowrdTitle">Berhasil Terkonfirmasi</string>
     <string name="messageConfirmed">Silahkan cek E-mail kamu, Lotech telah mengirimkan email untuk mengubah password</string>
@@ -47,4 +47,8 @@
     <string name="photo_profil">Photo Profil</string>
     <string name="food_quality">FOOD QUALITY</string>
     <string name="lifestyle">LIFESTYLE</string>
+    <string name="title_lifestyle">Lifestyle Information</string>
+    <string name="manage_your_lifestyle">Manage Your Lifestyle</string>
+    <string name="with">With</string>
+    <string name="lotech">Low Calories Technology</string>
 </resources>
