@@ -13,6 +13,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pink">
+
+        <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity"></activity>
+        <activity android:name=".ui.activity.lifestylefiture.LifestyleActivity" />
         <activity android:name=".ui.activity.ConsultantFindDetailActivity"></activity>
         <activity android:name=".ui.activity.ConsultFindConsultant" />
         <activity android:name=".ui.activity.ConsultVerifyDetailActivity" />
