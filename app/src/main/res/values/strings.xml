@@ -46,8 +46,12 @@
     <string name="photo_profil">Photo Profil</string>
     <string name="food_quality">FOOD QUALITY</string>
     <string name="lifestyle">LIFESTYLE</string>
+
     <string name="title_lifestyle">Lifestyle Information</string>
     <string name="manage_your_lifestyle">Manage Your Lifestyle</string>
     <string name="with">With</string>
     <string name="lotech">Low Calories Technology</string>
+
+    <string name="informasi_pribadi">Informasi Pribadi</string>
+
 </resources>
