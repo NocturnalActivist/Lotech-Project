@@ -3,6 +3,8 @@
     package="com.goat.lotech">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +13,12 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pink">
-        <activity android:name=".ui.activity.ProfileActivity"/>
+        <activity android:name=".ui.activity.ConsultantFindDetailActivity"></activity>
+        <activity android:name=".ui.activity.ConsultFindConsultant" />
+        <activity android:name=".ui.activity.ConsultVerifyDetailActivity" />
+        <activity android:name=".ui.activity.ConsultVerifyUserActivity" />
+        <activity android:name=".ui.activity.ConsultAddExpertActivity" />
+        <activity android:name=".ui.activity.ConsultDashboardActivity" />
         <activity android:name=".ui.activity.ForgotPasswordActivity" />
         <activity android:name=".ui.activity.SignUpActivity" />
         <activity android:name=".ui.activity.MainActivity" />

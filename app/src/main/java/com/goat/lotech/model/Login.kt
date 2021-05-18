@@ -18,7 +18,7 @@ object Login {
                 if (it.isSuccessful) {
                     // Sign in success, update UI with the signed-in user's information
                     result =
-                        if (auth.currentUser.isEmailVerified) {
+                        if (auth.currentUser?.isEmailVerified == true) {
                             Log.d(TAG, "signInWithEmail:success")
                             true
                         } else {
