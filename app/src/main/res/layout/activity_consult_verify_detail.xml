@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.ConsultVerifyDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="center">
+
+
+        <ImageView
+            android:id="@+id/selfPhoto"
+            android:layout_width="200dp"
+            android:layout_height="250dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/rounded_all"
+            android:src="@drawable/ic_baseline_face_24"
+            android:contentDescription="@string/image"/>
+
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Full Name"
+            android:textSize="24sp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:textColor="@color/black" />
+
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:textAlignment="center"
+            android:text="description" />
+
+
+        <TextView
+            android:id="@+id/noHp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="noHp" />
+
+
+        <TextView
+            android:id="@+id/sertifikat_keahlian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sertifikat keahlian"
+            android:textSize="24sp"
+            android:layout_marginTop="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textAlignment="center" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/grey" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dokumen Pribadi" />
+
+        <ImageView
+            android:id="@+id/ktp"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_marginTop="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/ic_baseline_face_24"
+            android:contentDescription="@string/image"
+            android:background="@drawable/rounded_all" />
+
+        <ImageView
+            android:id="@+id/keahlian"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_baseline_face_24"
+            android:background="@drawable/rounded_all" />
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:layout_marginTop="16dp" />
+
+
+        <Button
+            android:id="@+id/setuju"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:text="Saya menyetujui pelamar ini" />
+
+        <Button
+            android:id="@+id/tolak"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Saya menolak pelamar ini" />
+
+    </LinearLayout>
+
+</ScrollView>

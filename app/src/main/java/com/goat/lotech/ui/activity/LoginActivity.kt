@@ -6,10 +6,10 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.goat.lotech.databinding.ActivityLoginBinding
 import com.goat.lotech.model.Login
+import com.google.firebase.auth.FirebaseAuth
 
 class LoginActivity : AppCompatActivity() {
 
@@ -20,10 +20,21 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Auto-Login
+        autoLogin()
+
+
         binding.btnLogin.setOnClickListener {
             loginFormValidation()
         }
+    }
 
+    private fun autoLogin() {
+        if(FirebaseAuth.getInstance().currentUser != null
+            && FirebaseAuth.getInstance().currentUser?.isEmailVerified == true) {
+            startActivity(Intent(this, MainActivity::class.java))
+            finish()
+        }
     }
 
     private fun loginFormValidation() {
@@ -46,10 +57,10 @@ class LoginActivity : AppCompatActivity() {
 
         // todo 5555 itu delay dummy, soalnya saya blm tau cara nunggu proses diatas selesai duluan, makanya saya buat dummy delay
         Handler(Looper.getMainLooper()).postDelayed({
-            Log.d("TAG", Login.result.toString())
             binding.progressBar.visibility = View.GONE
             if(Login.result == true) {
-                Toast.makeText(this, "MENUJU HALAMAN BERANDA", Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this, MainActivity::class.java))
+                finish()
             }
         }, 5555)
 
