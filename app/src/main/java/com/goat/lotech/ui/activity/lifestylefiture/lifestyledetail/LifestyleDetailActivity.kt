@@ -2,6 +2,7 @@ package com.goat.lotech.ui.activity.lifestylefiture.lifestyledetail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.goat.lotech.R
 
 class LifestyleDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
