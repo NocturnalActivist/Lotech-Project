@@ -31,7 +31,9 @@ class LoginActivity : AppCompatActivity() {
     private fun autoLogin() {
         if(FirebaseAuth.getInstance().currentUser != null
             && FirebaseAuth.getInstance().currentUser?.isEmailVerified == true) {
-            startActivity(Intent(this, MainActivity::class.java))
+            val intent = Intent(this, MainActivity::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+            startActivity(intent)
             finish()
         }
     }
@@ -58,7 +60,9 @@ class LoginActivity : AppCompatActivity() {
         Handler(Looper.getMainLooper()).postDelayed({
             binding.progressBar.visibility = View.GONE
             if(Login.result == true) {
-                startActivity(Intent(this, MainActivity::class.java))
+                val intent = Intent(this, MainActivity::class.java)
+                intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_NEW_TASK
+                startActivity(intent)
                 finish()
             }
         }, 5555)

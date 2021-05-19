@@ -53,5 +53,11 @@
     <string name="lotech">Low Calories Technology</string>
 
     <string name="informasi_pribadi">Informasi Pribadi</string>
+    <string name="good_morning">Selamat Pagi</string>
+    <string name="good_afternoon" translatable="false">Selamat Siang</string>
+    <string name="good_evening">Selamat Sore</string>
+    <string name="good_night">Selamat Malam</string>
+    <string name="button">button</string>
+    <string name="tulis_pesan_anda">Tulis pesan anda</string>
 
 </resources>

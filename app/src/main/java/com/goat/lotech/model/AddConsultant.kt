@@ -4,7 +4,7 @@ import android.util.Log
 import android.widget.Toast
 import com.goat.lotech.ui.activity.ConsultAddExpertActivity
 import com.goat.lotech.ui.activity.ConsultVerifyDetailActivity
-import com.goat.lotech.ui.activity.ConsultantFindDetailActivity
+import com.goat.lotech.ui.activity.ConsultFindDetailActivity
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
@@ -80,7 +80,7 @@ object AddConsultant {
 
     fun changePrice(
         updatedPrice: String,
-        context: ConsultantFindDetailActivity
+        context: ConsultFindDetailActivity
     ) {
         firebaseAuth.currentUser?.uid?.let {
             Firebase.firestore.collection("consultant")
@@ -107,7 +107,7 @@ object AddConsultant {
                 .document(uid)
                 .update("like", option)
                 .addOnSuccessListener {
-                    Log.d(TAG, "Success: $it")
+                    Log.d(TAG, "Success")
                 }
                 .addOnFailureListener {
                     Log.e(TAG, "Fail: $it")

@@ -9,10 +9,21 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+            <ImageView
+                android:id="@+id/background"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="fitXY"
+                android:contentDescription="@string/image"
+                android:background="@color/pink_primary" />
+
             <View
                 android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:background="@color/pink_primary" />
+                android:layout_height="50dp"
+                android:backgroundTint="@color/white"
+                android:layout_marginTop="230dp"
+                android:background="@drawable/rounded_all"/>
+
 
             <LinearLayout
                 android:orientation="vertical"
@@ -29,10 +40,11 @@
                     <TextView
                         android:id="@+id/text_homepage"
                         android:textSize="22sp"
+                        android:textStyle="bold"
                         android:textColor="@color/white"
-                        android:layout_width="wrap_content"
+                        android:layout_width="200dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/my_homepage"/>
+                        android:text="Selamat Pagi"/>
 
                     <TextView
                         android:id="@+id/name_homepage"
@@ -42,7 +54,7 @@
                         android:textColor="@color/white"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="@string/cth_name"/>
+                        android:text="Semoga hari - harimu tetap produktif"/>
 
                     <ImageView
                         android:id="@+id/image_homepage"
