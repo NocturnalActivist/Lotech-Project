@@ -1,13 +1,10 @@
 package com.goat.lotech.model
 
 import android.util.Log
-import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 
 object Chat {
-    private val firebaseAuth = FirebaseAuth.getInstance()
-    private val myUid = firebaseAuth.currentUser?.uid
     private val TAG = Chat::class.java.simpleName
 
     fun sendChat(
@@ -17,7 +14,8 @@ object Chat {
         format: String,
         uid: String?,
         myName: String?,
-        mySelfPhoto: String?
+        mySelfPhoto: String?,
+        myUid: String
     ) {
 
         val lastUpdateMessageToSender = hashMapOf(
@@ -25,6 +23,7 @@ object Chat {
             "lastMessage" to message,
             "lastMessageTime" to format,
             "name" to name,
+            "uid" to uid,
         )
 
         val lastUpdateMessageToReceiver = hashMapOf(
@@ -32,6 +31,7 @@ object Chat {
             "lastMessage" to message,
             "lastMessageTime" to format,
             "name" to myName,
+            "uid" to myUid,
         )
 
         val logChat = hashMapOf(
@@ -42,13 +42,13 @@ object Chat {
         )
 
         // receiver & sender update
-        if (uid != null && myUid != null) {
+        if (uid != null) {
 
             // update last message (sender)
             Firebase.firestore.collection("chat")
                 .document(myUid)
                 .collection("listUser")
-                .document(uid)
+                .document("${myUid}$uid")
                 .set(lastUpdateMessageToSender)
                 .addOnSuccessListener {
                     Log.d(TAG, "Success update last message")
@@ -61,7 +61,7 @@ object Chat {
             Firebase.firestore.collection("chat")
                 .document(uid)
                 .collection("listUser")
-                .document(myUid)
+                .document("$uid${myUid}")
                 .set(lastUpdateMessageToReceiver)
                 .addOnSuccessListener {
                     Log.d(TAG, "Success update last message")
@@ -75,7 +75,7 @@ object Chat {
             Firebase.firestore.collection("chat")
                 .document(myUid)
                 .collection("listUser")
-                .document(uid)
+                .document("${myUid}$uid")
                 .collection("logChat")
                 .document(System.currentTimeMillis().toString())
                 .set(logChat)
@@ -90,7 +90,7 @@ object Chat {
             Firebase.firestore.collection("chat")
                 .document(uid)
                 .collection("listUser")
-                .document(myUid)
+                .document("$uid${myUid}")
                 .collection("logChat")
                 .document(System.currentTimeMillis().toString())
                 .set(logChat)
@@ -100,8 +100,6 @@ object Chat {
                 .addOnFailureListener {
                     Log.e(TAG, it.message.toString())
                 }
-
-
 
         }
     }

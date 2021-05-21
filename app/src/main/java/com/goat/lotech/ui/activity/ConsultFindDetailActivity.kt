@@ -9,6 +9,7 @@ import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.EditText
+import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -83,6 +84,7 @@ class ConsultFindDetailActivity : AppCompatActivity() {
         if (FirebaseAuth.getInstance().currentUser?.uid == uid) {
 
             binding.chatPakar.visibility = View.INVISIBLE
+            binding.telponPakar.visibility = View.INVISIBLE
 
             binding.changePrice.visibility = View.VISIBLE
             binding.changePrice.setOnClickListener {
