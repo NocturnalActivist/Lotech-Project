@@ -15,7 +15,7 @@
         android:id="@+id/item_container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/pink_Light2">
+        android:background="@color/pink_primary">
 
         <ImageView
             android:id="@+id/img_item_lifestyle"
@@ -39,6 +39,7 @@
             android:maxLines="2"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="@color/white"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/img_item_lifestyle"

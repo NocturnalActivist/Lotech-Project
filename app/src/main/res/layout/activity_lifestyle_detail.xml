@@ -6,35 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity">
 
-    <ImageView
-        android:id="@+id/image_detail_lifestyle"
+    <FrameLayout
+        android:id="@+id/frame_detail_lifestyle"
         android:layout_width="match_parent"
-        android:layout_height="270dp"
+        android:layout_height="wrap_content"
+        android:background="@color/pink_primary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/title_detail_lifestyle"
+        <ImageView
+            android:id="@+id/image_detail_lifestyle"
+            android:layout_width="match_parent"
+            android:layout_height="270dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginRight="8dp"
+            tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+        <TextView
+            android:id="@+id/title_detail_lifestyle"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="280dp"
+            android:gravity="center"
+            android:maxLines="2"
+            android:text="@string/title_lifestyle"
+            android:textColor="@color/white"
+            android:textSize="24sp" />
+    </FrameLayout>
+
+    <ScrollView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:maxLines="2"
-        android:text="@string/title_lifestyle"
-        android:textSize="28sp"
-        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_detail_lifestyle"/>
+        app:layout_constraintTop_toBottomOf="@+id/frame_detail_lifestyle">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/title_lifestyle"
-        android:textSize="16sp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_detail_lifestyle"/>
-
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/lorem_insum"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="16dp"/>
+    </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

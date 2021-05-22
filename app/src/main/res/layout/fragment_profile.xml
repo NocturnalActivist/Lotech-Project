@@ -8,12 +8,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/grey_dark"
+            android:layout_height="330dp"
+            android:background="@color/pink_primary"
             android:orientation="vertical">
-
 
             <ImageView
                 android:id="@+id/avatar_profile"
@@ -65,7 +63,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/weight"
-                            android:src="@drawable/ic_baseline_local_florist_24" />
+                            android:src="@drawable/ic_baseline_emoji_people_24" />
 
                         <TextView
                             android:id="@+id/tv_weight"
@@ -86,7 +84,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/height"
-                            android:src="@drawable/ic_baseline_local_florist_24" />
+                            android:src="@drawable/ic_baseline_emoji_people_24" />
 
                         <TextView
                             android:id="@+id/tv_height"
@@ -136,6 +134,7 @@
                         android:src="@drawable/ic_baseline_email_24" />
 
                     <TextView
+                        android:id="@+id/tv_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -153,9 +152,10 @@
                     <ImageView
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_baseline_local_florist_24" />
+                        android:src="@drawable/ic_baseline_wc_24" />
 
                     <TextView
+                        android:id="@+id/tv_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -176,6 +176,7 @@
                         android:src="@drawable/ic_baseline_date_range_24" />
 
                     <TextView
+                        android:id="@+id/tv_birthdate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -200,11 +201,9 @@
                     android:text="Logout" />
             </LinearLayout>
 
-
         </RelativeLayout>
 
-
-
     </androidx.cardview.widget.CardView>
+
 
 </ScrollView>

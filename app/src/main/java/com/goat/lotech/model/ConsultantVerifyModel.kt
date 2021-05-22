@@ -15,4 +15,4 @@ data class ConsultantVerifyModel(
     var sertifikat: String? = null,
     var like: Int? = 0,
     var price: String? = null,
-) : Parcelable
+):Parcelable
