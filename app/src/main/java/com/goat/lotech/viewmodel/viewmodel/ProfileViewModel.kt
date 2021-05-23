@@ -26,6 +26,7 @@ class ProfileViewModel: ViewModel() {
                         userItem.name = document.data["name"].toString()
                         userItem.heightBody = document.data["heightBody"].toString()
                         userItem.weightBody = document.data["weightBody"].toString()
+                        userItem.image = document.data["image"].toString()
                         userItem.gender = document.data["gender"].toString()
                         userItem.birthDate = document.data["birthDate"].toString()
 
