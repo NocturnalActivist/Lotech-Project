@@ -1,6 +1,7 @@
 package com.goat.lotech.model
 
 data class LifestyleModel (
+    var lifestyleId: String,
     var title: String,
     var information: String,
     var image: String,
