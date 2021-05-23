@@ -11,5 +11,6 @@ data class ProfileModel (
     var heightBody: String?= null,
     var weightBody: String? = null,
     var gender: String?= null,
+    var image: String? = null,
     var birthDate: String? = null
         ) :Parcelable
