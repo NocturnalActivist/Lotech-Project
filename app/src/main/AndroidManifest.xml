@@ -14,9 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Pink">
 
-        <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity"></activity>
+        <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity"/>
         <activity android:name=".ui.activity.lifestylefiture.LifestyleActivity" />
-        <activity android:name=".ui.activity.ConsultantFindDetailActivity"></activity>
+        <activity android:name=".ui.activity.ConsultantFindDetailActivity"/>
         <activity android:name=".ui.activity.ConsultFindConsultant" />
         <activity android:name=".ui.activity.ConsultVerifyDetailActivity" />
         <activity android:name=".ui.activity.ConsultVerifyUserActivity" />
