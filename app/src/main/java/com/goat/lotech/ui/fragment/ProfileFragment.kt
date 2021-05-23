@@ -1,7 +1,9 @@
 package com.goat.lotech.ui.fragment
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +11,8 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
+import com.bumptech.glide.Glide
+import com.goat.lotech.R
 import com.goat.lotech.databinding.FragmentProfileBinding
 import com.goat.lotech.model.ProfileModel
 import com.goat.lotech.ui.activity.LoginActivity
@@ -39,30 +43,42 @@ class ProfileFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ProfileViewModel::class.java]
+        binding.progressBar.visibility = View.VISIBLE
         viewModel.setUser()
         viewModel.getUser().observe(viewLifecycleOwner, { profile ->
+
+            Log.d("TAG", profile.toString())
 
             if(profile != null) {
                 getProfile(profile)
             }
-            Toast.makeText(context, "Terjadi Kesalahan", Toast.LENGTH_SHORT).show()
+
         })
 
         binding.btnLogout.setOnClickListener {
             logoutFromApplication()
         }
 
-        setProfile()
+        // todo: ini dihapus aja
+       // setProfile()
     }
 
+    @SuppressLint("SetTextI18n")
     private fun getProfile(data: ProfileModel) {
         binding.nameProfile.text = data.name
-        binding.tvHeight.text = data.heightBody
-        binding.tvWeight.text = data.weightBody
+        binding.tvHeight.text = data.heightBody + " CM"
+        binding.tvWeight.text = data.weightBody + " KG"
         binding.tvEmail.text = data.email
         binding.tvGender.text = data.gender
         binding.tvBirthdate.text = data.birthDate
 
+        Glide.with(this)
+            .load(data.image)
+            .placeholder(R.drawable.ic_baseline_person_24)
+            .error(R.drawable.ic_baseline_person_24)
+            .into(binding.avatarProfile)
+
+        binding.progressBar.visibility = View.GONE
     }
 
     private fun setProfile() {
