@@ -2,7 +2,6 @@ package com.goat.lotech.viewmodel.adapter
 
 import android.annotation.SuppressLint
 import android.content.Intent
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,8 +10,7 @@ import com.bumptech.glide.request.RequestOptions
 import com.goat.lotech.R
 import com.goat.lotech.databinding.ItemConsultantFindBinding
 import com.goat.lotech.model.ConsultantVerifyModel
-import com.goat.lotech.ui.activity.ConsultVerifyDetailActivity
-import com.goat.lotech.ui.activity.ConsultantFindDetailActivity
+import com.goat.lotech.ui.activity.ConsultFindDetailActivity
 
 class ConsultantFindAdapter : RecyclerView.Adapter<ConsultantFindAdapter.ConsultantFindViewHolder>() {
 
@@ -50,8 +48,8 @@ class ConsultantFindAdapter : RecyclerView.Adapter<ConsultantFindAdapter.Consult
                     .into(selfPhoto)
 
                 itemView.setOnClickListener {
-                    val intent = Intent(it.context, ConsultantFindDetailActivity::class.java)
-                    intent.putExtra(ConsultantFindDetailActivity.EXTRA_USER, list)
+                    val intent = Intent(it.context, ConsultFindDetailActivity::class.java)
+                    intent.putExtra(ConsultFindDetailActivity.EXTRA_USER, list)
                     it.context.startActivity(intent)
                 }
             }

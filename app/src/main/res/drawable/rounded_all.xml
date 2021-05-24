@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android" android:tint="@color/pink_primary">
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <gradient
+        android:type="linear"
+        android:angle="0"
+        android:startColor="@color/pink_primary"
+        android:endColor="@color/pink_Light2" />
 
     <corners android:radius="15dp" />
 
