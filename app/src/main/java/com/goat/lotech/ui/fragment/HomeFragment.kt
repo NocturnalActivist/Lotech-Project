@@ -48,7 +48,7 @@ class HomeFragment : Fragment() {
         binding.cekKalori.setOnClickListener {
             startActivity(Intent(activity, MLMainActivity::class.java))
 
-
+        }
         binding.lifestyle.setOnClickListener{
             startActivity(Intent(activity, LifestyleActivity::class.java))
 
