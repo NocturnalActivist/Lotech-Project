@@ -47,8 +47,17 @@
                         android:text="Selamat Pagi"/>
 
                     <TextView
-                        android:id="@+id/name_homepage"
+                        android:id="@+id/name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="22sp"
+                        android:textColor="@color/white"
                         android:layout_below="@+id/text_homepage"
+                        android:visibility="gone"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/name_homepage"
+                        android:layout_below="@+id/name"
                         android:layout_marginTop="6dp"
                         android:textSize="14sp"
                         android:textColor="@color/white"
@@ -56,11 +65,13 @@
                         android:layout_height="wrap_content"
                         android:text="Semoga hari - harimu tetap produktif"/>
 
-                    <ImageView
+                    <de.hdodenhof.circleimageview.CircleImageView
                         android:id="@+id/image_homepage"
-                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true"
                         android:layout_width="60dp"
                         android:layout_height="60dp"
+                        app:civ_border_width="2dp"
+                        app:civ_border_color="@android:color/holo_blue_bright"
                         android:contentDescription="@string/photo_profil"
                         android:src="@drawable/ic_baseline_person_24"/>
                 </RelativeLayout>
@@ -89,6 +100,7 @@
                         app:cardUseCompatPadding="true">
 
                         <LinearLayout
+                            android:id="@+id/cekKalori"
                             android:padding="16dp"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
