@@ -14,11 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Pink">
+
         <activity android:name=".ml.MLMainActivity"></activity>
         <activity android:name=".ui.activity.ChatUserActivity" />
         <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity" />
         <activity android:name=".ui.activity.lifestylefiture.LifestyleActivity" />
         <activity android:name=".ui.activity.ConsultFindDetailActivity" />
+
         <activity android:name=".ui.activity.ConsultFindConsultant" />
         <activity android:name=".ui.activity.ConsultVerifyDetailActivity" />
         <activity android:name=".ui.activity.ConsultVerifyUserActivity" />

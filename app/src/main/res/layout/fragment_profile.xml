@@ -8,20 +8,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <LinearLayout
-
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/grey_dark"
+            android:layout_height="330dp"
+            android:background="@color/pink_primary"
             android:orientation="vertical">
 
-
-            <ImageView
+            <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/avatar_profile"
                 android:layout_width="150dp"
                 android:layout_height="150dp"
+                android:layout_marginTop="16dp"
                 android:layout_gravity="center_horizontal"
                 android:contentDescription="@string/photo_profil"
-                app:srcCompat="@drawable/ic_baseline_person_24" />
+                android:background="@drawable/ic_baseline_person_24"
+                app:civ_border_color="@color/white"
+                app:civ_border_width="3dp"/>
 
             <TextView
                 android:id="@+id/name_profile"
@@ -29,11 +30,23 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
                 android:background="@color/white"
                 android:text="@string/cth_name"
                 android:textColor="@color/pink_Dark"
                 android:textSize="24sp"
                 android:textStyle="bold" />
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:indeterminateTint="@color/white"
+                android:progressTint="@color/white"
+                android:layout_gravity="center"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
@@ -65,7 +78,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/weight"
-                            android:src="@drawable/ic_baseline_local_florist_24" />
+                            android:src="@drawable/ic_baseline_emoji_people_24" />
 
                         <TextView
                             android:id="@+id/tv_weight"
@@ -86,7 +99,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/height"
-                            android:src="@drawable/ic_baseline_local_florist_24" />
+                            android:src="@drawable/ic_baseline_emoji_people_24" />
 
                         <TextView
                             android:id="@+id/tv_height"
@@ -136,6 +149,7 @@
                         android:src="@drawable/ic_baseline_email_24" />
 
                     <TextView
+                        android:id="@+id/tv_email"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -153,9 +167,10 @@
                     <ImageView
                         android:layout_width="36dp"
                         android:layout_height="36dp"
-                        android:src="@drawable/ic_baseline_local_florist_24" />
+                        android:src="@drawable/ic_baseline_wc_24" />
 
                     <TextView
+                        android:id="@+id/tv_gender"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -176,6 +191,7 @@
                         android:src="@drawable/ic_baseline_date_range_24" />
 
                     <TextView
+                        android:id="@+id/tv_birthdate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -200,11 +216,9 @@
                     android:text="Logout" />
             </LinearLayout>
 
-
         </RelativeLayout>
 
-
-
     </androidx.cardview.widget.CardView>
+
 
 </ScrollView>

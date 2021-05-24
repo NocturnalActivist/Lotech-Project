@@ -10,7 +10,11 @@ import com.goat.lotech.databinding.FragmentHomeBinding
 import com.goat.lotech.ml.MLMainActivity
 import com.goat.lotech.model.Home
 import com.goat.lotech.ui.activity.ConsultDashboardActivity
+
 import com.goat.lotech.utils.ChangeBackground
+
+import com.goat.lotech.ui.activity.lifestylefiture.LifestyleActivity
+
 
 class HomeFragment : Fragment() {
 
@@ -36,11 +40,18 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.consult.setOnClickListener {
             startActivity(Intent(activity, ConsultDashboardActivity::class.java))
         }
+
         binding.cekKalori.setOnClickListener {
             startActivity(Intent(activity, MLMainActivity::class.java))
+
+
+        binding.lifestyle.setOnClickListener{
+            startActivity(Intent(activity, LifestyleActivity::class.java))
+
         }
     }
 }
