@@ -10,7 +10,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="330dp"
-            android:background="@color/pink_primary"
+            android:background="@color/yellow"
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -34,7 +34,7 @@
                 android:layout_marginEnd="16dp"
                 android:background="@color/white"
                 android:text="@string/cth_name"
-                android:textColor="@color/pink_Dark"
+                android:textColor="@color/black"
                 android:textSize="24sp"
                 android:textStyle="bold" />
 
@@ -62,8 +62,8 @@
                 android:layout_marginTop="275dp">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_width="370dp"
+                    android:layout_height="100dp"
                     android:orientation="horizontal"
                     android:weightSum="2">
 
@@ -213,6 +213,8 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginBottom="50dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/black"
                     android:text="Logout" />
             </LinearLayout>
 

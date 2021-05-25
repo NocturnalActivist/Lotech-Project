@@ -12,7 +12,7 @@
             <View
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
-                android:background="@color/pink_primary" />
+                android:background="@color/yellow" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -29,7 +29,7 @@
                     <TextView
                         android:id="@+id/text_homepage"
                         android:textSize="22sp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/my_homepage"/>
@@ -39,7 +39,7 @@
                         android:layout_below="@+id/text_homepage"
                         android:layout_marginTop="6dp"
                         android:textSize="14sp"
-                        android:textColor="@color/white"
+                        android:textColor="@color/black"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="@string/cth_name"/>

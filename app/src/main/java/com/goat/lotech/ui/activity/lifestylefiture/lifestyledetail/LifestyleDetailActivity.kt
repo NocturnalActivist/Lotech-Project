@@ -32,7 +32,7 @@ class LifestyleDetailActivity : AppCompatActivity() {
             val lifestyleId = extras.getString(EXTRA_LIFESTYLE)
             if (lifestyleId != null) {
                 viewModel.setSelectedLifestyle(lifestyleId)
-                populateLifestye(viewModel.getLifestyle() as LifestyleModel)
+                populateLifestye(viewModel.getLifestyle())
 
             }
         }

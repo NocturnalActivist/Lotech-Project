@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Pink">
+        android:theme="@style/Theme.Yellow">
 
         <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity"/>
         <activity android:name=".ui.activity.lifestylefiture.LifestyleActivity" />
