@@ -11,6 +11,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
 import com.goat.lotech.databinding.ActivityMlmainBinding
@@ -50,7 +51,7 @@ class MLMainActivity : AppCompatActivity() {
         binding = ActivityMlmainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        supportActionBar?.title = "TESTING"
+        supportActionBar?.title = "Cek Kalori Makananmu Hari Ini"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.chooseImageButton.setOnClickListener {
@@ -89,6 +90,7 @@ class MLMainActivity : AppCompatActivity() {
             Intent.createChooser(intent, "Pick a Picture"),
             IMAGE_PICK_GALLERY_CODE
         )
+        binding.progressBar.visibility = View.VISIBLE
     }
 
     private fun uploadFromCamera() {
@@ -97,6 +99,7 @@ class MLMainActivity : AppCompatActivity() {
             .compress(1024)
             .maxResultSize(1080, 1080)
             .start(IMAGE_PICK_CAMERA_CODE)
+        binding.progressBar.visibility = View.VISIBLE
     }
 
 
@@ -104,7 +107,6 @@ class MLMainActivity : AppCompatActivity() {
         stopBackgroundThread()
         classifier.close()
         super.onDestroy()
-
     }
 
 
@@ -128,6 +130,7 @@ class MLMainActivity : AppCompatActivity() {
 
         runOnUiThread { binding.predictionText.text = text }
 
+
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -140,6 +143,7 @@ class MLMainActivity : AppCompatActivity() {
                     val selectedImage = BitmapFactory.decodeStream(inputStream)
                     binding.selectedImageView.setImageBitmap(selectedImage)
                     backgroundHandler.post(runPerically)
+                    binding.progressBar.visibility = View.GONE
                 }
 
             }

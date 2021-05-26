@@ -16,8 +16,6 @@ class MessageViewModel : ViewModel() {
         val listItem = ArrayList<MessageModel>()
 
         try {
-
-
             Firebase.firestore.collection("chat")
                 .document(myUid)
                 .collection("listUser")

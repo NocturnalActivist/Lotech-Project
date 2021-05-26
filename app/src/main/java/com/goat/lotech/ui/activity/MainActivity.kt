@@ -2,13 +2,12 @@ package com.goat.lotech.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.navigation.findNavController
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
+import androidx.fragment.app.Fragment
 import com.goat.lotech.R
 import com.goat.lotech.databinding.ActivityMainBinding
+import com.goat.lotech.ui.fragment.ChatFragment
+import com.goat.lotech.ui.fragment.HomeFragment
+import com.goat.lotech.ui.fragment.ProfileFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class MainActivity : AppCompatActivity() {
@@ -23,17 +22,37 @@ class MainActivity : AppCompatActivity() {
 
         val navView: BottomNavigationView = findViewById(R.id.nav_view)
 
-        val navController = findNavController(R.id.nav_host_fragment)
+        navView.setOnNavigationItemSelectedListener {
+            var selectedFragment: Fragment = HomeFragment()
 
-//        val appBarConfiguration = AppBarConfiguration(
-//            setOf(
-//                R.id.navigation_home,
-//                R.id.navigation_chat,
-//                R.id.navigation_profile
-//            )
-//        )
-//
-//        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
+            when (it.itemId) {
+                R.id.navigation_home -> {
+                    navView.menu.findItem(R.id.navigation_home).isEnabled = false
+                    navView.menu.findItem(R.id.navigation_chat).isEnabled = true
+                    navView.menu.findItem(R.id.navigation_profile).isEnabled = true
+                    selectedFragment = HomeFragment()
+                }
+                R.id.navigation_chat -> {
+                    navView.menu.findItem(R.id.navigation_chat).isEnabled = false
+                    navView.menu.findItem(R.id.navigation_profile).isEnabled = true
+                    navView.menu.findItem(R.id.navigation_home).isEnabled = true
+                    selectedFragment = ChatFragment()
+
+                }
+                R.id.navigation_profile -> {
+                    navView.menu.findItem(R.id.navigation_profile).isEnabled = false
+                    navView.menu.findItem(R.id.navigation_home).isEnabled = true
+                    navView.menu.findItem(R.id.navigation_chat).isEnabled = true
+                    selectedFragment = ProfileFragment()
+                }
+                else -> {
+                    navView.menu.findItem(R.id.navigation_home).isEnabled = false
+                }
+            }
+            val transaction = supportFragmentManager.beginTransaction()
+            transaction.replace(R.id.container, selectedFragment)
+            transaction.commit()
+            return@setOnNavigationItemSelectedListener true
+        }
     }
 }

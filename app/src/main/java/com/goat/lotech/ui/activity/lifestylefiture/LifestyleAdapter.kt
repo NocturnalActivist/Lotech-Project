@@ -5,22 +5,14 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
+import com.goat.lotech.R
 import com.goat.lotech.databinding.ItemLifestyleBinding
-import com.goat.lotech.model.LifestyleModel
+import com.goat.lotech.model.ArticlesItem
 import com.goat.lotech.ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity
 
 class LifestyleAdapter: RecyclerView.Adapter<LifestyleAdapter.LifestyleViewHolder>() {
 
-    private var listLifestyle = ArrayList<LifestyleModel>()
-
-    fun setLifestyle(lifestyle: List<LifestyleModel>) {
-        if(lifestyle != null) {
-            this.listLifestyle.clear()
-            this.listLifestyle.addAll(lifestyle)
-            notifyDataSetChanged()
-        }
-    }
+    var listData = mutableListOf<ArticlesItem>()
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -31,24 +23,27 @@ class LifestyleAdapter: RecyclerView.Adapter<LifestyleAdapter.LifestyleViewHolde
     }
 
     override fun onBindViewHolder(holder: LifestyleViewHolder, position: Int) {
-        val lifestyle = listLifestyle[position]
+        val lifestyle = listData[position]
         holder.bind(lifestyle)
     }
 
-    override fun getItemCount(): Int = listLifestyle.size
+    override fun getItemCount(): Int = listData.size
 
     class LifestyleViewHolder(private val binding: ItemLifestyleBinding): RecyclerView.ViewHolder(binding.root) {
-        fun bind(lifestyle: LifestyleModel) {
+        fun bind(lifestyle: ArticlesItem) {
             with(binding) {
                 tvItemTitleLifestsyle.text = lifestyle.title
-                tvItemSourceLifestsyle.text = lifestyle.source
+                source.text = lifestyle.source.name
+                description.text = lifestyle.description
                 Glide.with(itemView.context)
-                    .load(lifestyle.image)
-                    .into(imgItemLifestyle)
+                    .load(lifestyle.urlToImage)
+                    .placeholder(R.drawable.ic_baseline_refresh_24)
+                    .error(R.drawable.ic_baseline_refresh_24)
+                    .into(imageNews)
 
                 itemView.setOnClickListener{
                     val intent= Intent(itemView.context, LifestyleDetailActivity::class.java)
-                    intent.putExtra(LifestyleDetailActivity.EXTRA_LIFESTYLE, lifestyle.lifestyleId)
+                    intent.putExtra(LifestyleDetailActivity.EXTRA_LIFESTYLE, lifestyle.url)
                     itemView.context.startActivity(intent)
                 }
             }
