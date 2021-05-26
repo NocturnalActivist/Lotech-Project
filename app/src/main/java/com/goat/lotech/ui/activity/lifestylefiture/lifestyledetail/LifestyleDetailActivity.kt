@@ -2,13 +2,12 @@ package com.goat.lotech.ui.activity.lifestylefiture.lifestyledetail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.lifecycle.ViewModelProvider
-import com.bumptech.glide.Glide
-import com.bumptech.glide.request.RequestOptions
-import com.goat.lotech.R
+import android.view.View
+import android.webkit.WebView
+import android.webkit.WebViewClient
+
+
 import com.goat.lotech.databinding.ActivityLifestyleDetailBinding
-import com.goat.lotech.model.LifestyleModel
-import com.goat.lotech.ui.activity.lifestylefiture.LifestyleViewModel
 
 class LifestyleDetailActivity : AppCompatActivity() {
 
@@ -17,7 +16,6 @@ class LifestyleDetailActivity : AppCompatActivity() {
     }
 
     private lateinit var lifestyleDetailBinding: ActivityLifestyleDetailBinding
-    private lateinit var viewModel: LifestyleDetailViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,26 +23,32 @@ class LifestyleDetailActivity : AppCompatActivity() {
         lifestyleDetailBinding = ActivityLifestyleDetailBinding.inflate(layoutInflater)
         setContentView(lifestyleDetailBinding.root)
 
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[LifestyleDetailViewModel::class.java]
+        supportActionBar?.title = "Lifestyle News"
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val extras = intent.extras
-        if (extras != null) {
-            val lifestyleId = extras.getString(EXTRA_LIFESTYLE)
-            if (lifestyleId != null) {
-                viewModel.setSelectedLifestyle(lifestyleId)
-                populateLifestye(viewModel.getLifestyle())
+        val url: String = intent.getStringExtra(EXTRA_LIFESTYLE).toString()
 
+        lifestyleDetailBinding.progressBar.visibility = View.VISIBLE
+
+        lifestyleDetailBinding.webView.settings.javaScriptEnabled
+
+        lifestyleDetailBinding.webView.webViewClient = object : WebViewClient() {
+            override fun shouldOverrideUrlLoading(view: WebView?, url: String?): Boolean {
+                if (url != null) {
+                    view?.loadUrl(url)
+                }
+                return true
             }
         }
-    }
+        lifestyleDetailBinding.webView.loadUrl(url)
+        lifestyleDetailBinding.progressBar.visibility = View.GONE
 
-    private fun populateLifestye(lifestyleModel: LifestyleModel) {
-        lifestyleDetailBinding.titleDetailLifestyle.text = lifestyleModel.title
-        lifestyleDetailBinding.descriptionDetailLifestyle.text = lifestyleModel.information
-
-        Glide.with(this)
-            .load(lifestyleModel.image)
-            .into(lifestyleDetailBinding.imageDetailLifestyle)
 
     }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressed()
+        return super.onSupportNavigateUp()
+    }
+
 }
