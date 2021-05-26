@@ -4,6 +4,7 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -14,9 +15,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Yellow">
 
-        <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity"/>
+        <activity android:name=".ml.MLMainActivity"></activity>
+        <activity android:name=".ui.activity.ChatUserActivity" />
+        <activity android:name=".ui.activity.lifestylefiture.lifestyledetail.LifestyleDetailActivity" />
         <activity android:name=".ui.activity.lifestylefiture.LifestyleActivity" />
-        <activity android:name=".ui.activity.ConsultantFindDetailActivity"/>
+        <activity android:name=".ui.activity.ConsultFindDetailActivity" />
+
         <activity android:name=".ui.activity.ConsultFindConsultant" />
         <activity android:name=".ui.activity.ConsultVerifyDetailActivity" />
         <activity android:name=".ui.activity.ConsultVerifyUserActivity" />
@@ -24,7 +28,9 @@
         <activity android:name=".ui.activity.ConsultDashboardActivity" />
         <activity android:name=".ui.activity.ForgotPasswordActivity" />
         <activity android:name=".ui.activity.SignUpActivity" />
-        <activity android:name=".ui.activity.MainActivity" />
+        <activity
+            android:name=".ui.activity.MainActivity"
+            android:theme="@style/noActionBar" />
         <activity android:name=".ui.activity.SplashScreenActivity" />
         <activity android:name=".ui.activity.LoginActivity">
             <intent-filter>

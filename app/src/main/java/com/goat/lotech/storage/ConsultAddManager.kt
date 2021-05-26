@@ -18,6 +18,7 @@ object ConsultAddManager {
     fun uploadImageOption(mContext: Context, imageURI: Uri, option: String) {
         mProgressDialog = ProgressDialog(mContext)
         mProgressDialog.setMessage("Mohon tunggu hingga proses selesai...")
+        mProgressDialog.setCanceledOnTouchOutside(false)
         mProgressDialog.show()
         val imageFileName = "consultant/$option/image_${System.currentTimeMillis()}.png"
         val uploadTask = mStorageRef.child(imageFileName).putFile(imageURI)

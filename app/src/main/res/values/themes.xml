@@ -23,6 +23,21 @@
         <item name="colorSecondary">@color/pink_primary</item>
         <item name="colorSecondaryVariant">@color/pink_Light</item>
         <item name="colorOnSecondary">@color/black</item>
+
+    </style>
+
+
+    <style name="noActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/pink_primary</item>
+        <item name="colorPrimaryVariant">@color/pink_Dark</item>
+        <item name="colorPrimaryDark">@color/pink_primary</item>
+        <item name="colorOnPrimary">@color/white</item>
+
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/pink_primary</item>
+        <item name="colorSecondaryVariant">@color/pink_Light</item>
+        <item name="colorOnSecondary">@color/black</item>
     </style>
 
     <style name="Theme.Yellow" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
