@@ -1,15 +1,13 @@
 package com.goat.lotech.network
 
-import com.squareup.okhttp.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
-import kotlin.math.log
 
 class ApiConfig {
 
     companion object {
-        private const val BASE_URL = "https://newsapi.org/v2/"
+        private const val BASE_URL = "http://34.101.169.251/"
         fun getApiService(): Retrofit {
 
             val logging = HttpLoggingInterceptor()

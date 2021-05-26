@@ -2,10 +2,11 @@ package com.goat.lotech.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.*
+import android.widget.Toast
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import com.goat.lotech.R
+import com.goat.lotech.databinding.ActivityMainBinding
 import com.goat.lotech.databinding.FragmentHomeBinding
 import com.goat.lotech.ml.MLMainActivity
 import com.goat.lotech.model.Home
@@ -14,6 +15,7 @@ import com.goat.lotech.ui.activity.ConsultDashboardActivity
 import com.goat.lotech.utils.ChangeBackground
 
 import com.goat.lotech.ui.activity.lifestylefiture.LifestyleActivity
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 
 class HomeFragment : Fragment() {

@@ -13,25 +13,23 @@ class ProfileViewModel: ViewModel() {
     private val userProfile = MutableLiveData<ProfileModel>()
     private val TAG = ProfileViewModel::class.java.simpleName
 
-    fun setUser() {
+    fun setUser(uid: String) {
         try {
             Firebase.firestore.collection("users")
-//                .whereEqualTo("role", "user")
+                .document(uid)
                 .get()
-                .addOnSuccessListener { documents ->
-                    for (document in documents) {
+                .addOnSuccessListener {
                         val userItem = ProfileModel()
-                        userItem.uid = document.id
-                        userItem.email = document.data["email"].toString()
-                        userItem.name = document.data["name"].toString()
-                        userItem.heightBody = document.data["heightBody"].toString()
-                        userItem.weightBody = document.data["weightBody"].toString()
-                        userItem.image = document.data["image"].toString()
-                        userItem.gender = document.data["gender"].toString()
-                        userItem.birthDate = document.data["birthDate"].toString()
+                        userItem.email = it["email"].toString()
+                        userItem.name = it["name"].toString()
+                        userItem.heightBody = it["heightBody"].toString()
+                        userItem.weightBody = it["weightBody"].toString()
+                        userItem.image = it["image"].toString()
+                        userItem.gender = it["gender"].toString()
+                        userItem.birthDate = it["birthDate"].toString()
 
                         userProfile.postValue(userItem)
-                    }
+
                 }
                 .addOnFailureListener { exception ->
                     Log.w(TAG, "Error getting documents: ", exception)

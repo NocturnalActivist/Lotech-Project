@@ -2,11 +2,11 @@ package com.goat.lotech.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Source(
-
-    @field:SerializedName("name")
-    val name: String
+data class Articles(
+    @field:SerializedName("articles")
+    val articles: List<ArticlesItem>,
 )
+
 
 data class ArticlesItem(
 
@@ -24,4 +24,11 @@ data class ArticlesItem(
 
     @field:SerializedName("url")
     val url: String
+)
+
+
+data class Source(
+
+    @field:SerializedName("name")
+    val name: String
 )
