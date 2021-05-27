@@ -15,4 +15,9 @@
     <color name="pink_Light2">#FFB2DD</color>
     <color name="grey">#EEEEEE</color>
     <color name="grey_dark">#BCBCBC</color>
+    <color name="blue_primary">#7AD7CF</color>
+    <color name="blue_second">#00E5FF</color>
+    <color name="yellow">#FFE457</color>
+    <color name="yellow_second">#FFFF5A</color>
+
 </resources>

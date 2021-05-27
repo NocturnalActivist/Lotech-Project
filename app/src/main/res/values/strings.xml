@@ -62,6 +62,8 @@
     <string name="tulis_pesan_anda">Tulis pesan anda</string>
 
     <string name="lorem_insum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
+    <string name="edit_profile">Edit Profile</string>
+    <string name="edit_photo_profile">Pilih Foto</string>
 
 
 </resources>

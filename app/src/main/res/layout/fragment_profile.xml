@@ -10,7 +10,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="330dp"
-            android:background="@color/pink_primary"
+            android:background="@color/yellow"
             android:orientation="vertical">
 
             <de.hdodenhof.circleimageview.CircleImageView
@@ -21,22 +21,34 @@
                 android:layout_gravity="center_horizontal"
                 android:contentDescription="@string/photo_profil"
                 android:background="@drawable/ic_baseline_person_24"
-                app:civ_border_color="@color/white"
-                app:civ_border_width="3dp"/>
+                app:civ_border_color="@color/white" />
 
-            <TextView
-                android:id="@+id/name_profile"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="10dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginEnd="16dp"
-                android:background="@color/white"
-                android:text="@string/cth_name"
-                android:textColor="@color/pink_Dark"
-                android:textSize="24sp"
-                android:textStyle="bold" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/name_profile"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@color/white"
+                    android:text="@string/cth_name"
+                    android:textColor="@color/black"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/btn_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:layout_constraintStart_toEndOf="@+id/name_profile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ProgressBar
                 android:id="@+id/progress_bar"
@@ -56,7 +68,7 @@
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/tbbb"
-                android:layout_width="370dp"
+                android:layout_width="300dp"
                 android:layout_height="100dp"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="275dp">
@@ -75,17 +87,17 @@
                         android:orientation="vertical">
 
                         <ImageView
-                            android:layout_width="50dp"
+                            android:layout_width="40dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/weight"
-                            android:src="@drawable/ic_baseline_emoji_people_24" />
+                            android:src="@drawable/icon_berat_badan_kuning" />
 
                         <TextView
                             android:id="@+id/tv_weight"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/weight"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
 
                     <LinearLayout
@@ -99,14 +111,14 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:contentDescription="@string/height"
-                            android:src="@drawable/ic_baseline_emoji_people_24" />
+                            android:src="@drawable/icon_tinggi_badan_kuning" />
 
                         <TextView
                             android:id="@+id/tv_height"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="@string/height"
-                            android:textSize="20sp" />
+                            android:textSize="16sp" />
                     </LinearLayout>
                 </LinearLayout>
 
@@ -213,12 +225,13 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="end"
                     android:layout_marginBottom="50dp"
+                    android:backgroundTint="@color/yellow"
+                    android:textColor="@color/black"
                     android:text="Logout" />
             </LinearLayout>
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
 
 </ScrollView>

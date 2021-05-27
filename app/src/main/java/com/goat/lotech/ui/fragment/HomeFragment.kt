@@ -11,6 +11,8 @@ import com.goat.lotech.databinding.FragmentHomeBinding
 import com.goat.lotech.ml.MLMainActivity
 import com.goat.lotech.model.Home
 import com.goat.lotech.ui.activity.ConsultDashboardActivity
+import com.goat.lotech.ui.activity.EditProfileActivity
+import com.goat.lotech.ui.activity.FoodQualityActivity
 
 import com.goat.lotech.utils.ChangeBackground
 
@@ -49,11 +51,16 @@ class HomeFragment : Fragment() {
 
         binding.cekKalori.setOnClickListener {
             startActivity(Intent(activity, MLMainActivity::class.java))
-
         }
+
         binding.lifestyle.setOnClickListener{
             startActivity(Intent(activity, LifestyleActivity::class.java))
-
         }
+
+        binding.foodQuality.setOnClickListener{
+            startActivity(Intent(activity, FoodQualityActivity::class.java ))
+        }
+
+
     }
 }

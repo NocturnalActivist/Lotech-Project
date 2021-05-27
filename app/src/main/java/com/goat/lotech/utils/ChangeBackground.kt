@@ -24,8 +24,8 @@ object ChangeBackground {
 
                     Glide.with(it)
                         .load("https://images.unsplash.com/photo-1546637703-5fc4a4bf42ea?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
-                        .placeholder(R.color.pink_primary)
-                        .error(R.color.pink_primary)
+                        .placeholder(R.color.yellow)
+                        .error(R.color.blue_primary)
                         .into(background)
                 }
             }
@@ -36,8 +36,8 @@ object ChangeBackground {
                 activity?.let {
                     Glide.with(it)
                         .load("https://images.unsplash.com/photo-1476224203421-9ac39bcb3327?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
-                        .placeholder(R.color.pink_primary)
-                        .error(R.color.pink_primary)
+                        .placeholder(R.color.yellow)
+                        .error(R.color.blue_primary)
                         .into(background)
                 }
             }
@@ -48,8 +48,8 @@ object ChangeBackground {
                 activity?.let {
                     Glide.with(it)
                         .load("https://images.unsplash.com/photo-1517833969405-d4a24c2c8280?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80")
-                        .placeholder(R.color.pink_primary)
-                        .error(R.color.pink_primary)
+                        .placeholder(R.color.yellow)
+                        .error(R.color.blue_primary)
                         .into(background)
                 }
             }
@@ -60,8 +60,8 @@ object ChangeBackground {
                 activity?.let {
                     Glide.with(it)
                         .load("https://images.unsplash.com/photo-1491219662911-6300ce099062?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=977&q=80")
-                        .placeholder(R.color.pink_primary)
-                        .error(R.color.pink_primary)
+                        .placeholder(R.color.yellow)
+                        .error(R.color.blue_primary)
                         .into(background)
                 }
             }
