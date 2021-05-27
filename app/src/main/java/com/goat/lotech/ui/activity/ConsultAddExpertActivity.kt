@@ -105,7 +105,7 @@ class ConsultAddExpertActivity : AppCompatActivity() {
 
         binding.progressBar.visibility = View.VISIBLE
         AddConsultant.addData(name, description, sertifikatKeahlian, noHp, selfPhoto, ktp, sertifikat, this)
-        // todo 5555 itu delay dummy, soalnya saya blm tau cara nunggu proses diatas selesai duluan, makanya saya buat dummy delay
+        // todo 7777 itu delay dummy, soalnya saya blm tau cara nunggu proses diatas selesai duluan, makanya saya buat dummy delay
         Handler(Looper.getMainLooper()).postDelayed({
             showDialogIfSuccess()
         }, 7777)

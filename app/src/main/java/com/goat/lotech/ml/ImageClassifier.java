@@ -186,7 +186,8 @@ public abstract class ImageClassifier {
         final int size = sortedlabels.size();
         for (int i = 0; i < size; ++i) {
             Map.Entry<String, Float> label = sortedlabels.poll();
-            textToShow = String.format("\n%s: %4.2f", label.getKey(), label.getValue()) + textToShow;
+//            textToShow = String.format("\n%s: %4.2f", label.getKey(), label.getValue()) + textToShow;
+            textToShow = label.getKey();
         }
         return textToShow;
     }
