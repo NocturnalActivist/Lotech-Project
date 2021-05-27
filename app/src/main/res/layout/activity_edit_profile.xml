@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/signup_gradient"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.Yellow"
+    tools:context=".ui.activity.EditProfileActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:orientation="vertical">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/image_edit_profile"
+            android:layout_alignParentEnd="true"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="16dp"
+            app:civ_border_width="2dp"
+            android:tooltipText="@string/title_lifestyle"
+            android:contextClickable="true"
+            app:civ_border_color="@android:color/holo_blue_bright"
+            android:contentDescription="@string/photo_profil"
+            android:src="@drawable/ic_baseline_person_24"/>
+
+        <TextView
+            android:id="@+id/edit_foto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/edit_photo_profile"
+            android:layout_gravity="center_horizontal"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/name_edit_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorEnabled="true"
+            android:layout_marginTop="16dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#FBE9E7"
+                android:hint="@string/name"
+                android:inputType="textPersonName"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/btn_once_date"
+                android:layout_width="50dp"
+                android:contentDescription="@string/birth_date"
+                android:layout_height="wrap_content"
+                style="@style/Widget.AppCompat.Button.Colored"
+                android:src="@drawable/ic_baseline_date_range_white"/>
+            <TextView
+                android:id="@+id/tv_once_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:text="@string/birth_date"/>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBE9E7"
+            android:text="@string/gender"
+            android:textAlignment="textStart"
+            android:textSize="18sp"
+            android:layout_marginTop="20dp"/>
+        <RadioGroup
+            android:id="@+id/jenis_kelamin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FBE9E7">
+            <RadioButton
+                android:id="@+id/male"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#4b636e"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/male"
+                tools:ignore="OnClick" />
+            <RadioButton
+                android:id="@+id/female"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#4b636e"
+                android:onClick="onRadioButtonClicked"
+                android:text="@string/female"
+                tools:ignore="OnClick" />
+        </RadioGroup>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_height_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            app:errorEnabled="true"
+            app:passwordToggleTint="@color/pink_Light">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_height_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FBE9E7"
+                android:hint="@string/height"
+                android:inputType="text|number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_weight_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:errorEnabled="true"
+            app:passwordToggleTint="@color/pink_Light">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_weight_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FBE9E7"
+                android:hint="@string/weight"
+                android:inputType="text|number"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_email_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:errorEnabled="true">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FBE9E7"
+                android:hint="@string/email"
+                android:inputType="textEmailAddress"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/input_password_signup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:errorEnabled="true"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/yellow">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_password_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#FBE9E7"
+                android:hint="@string/password"
+                android:inputType="textPassword"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:visibility="gone"/>
+
+        <Button
+            android:id="@+id/btn_edt_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="16dp"
+            android:text="@string/edit_profile"/>
+
+    </LinearLayout>
+</ScrollView>

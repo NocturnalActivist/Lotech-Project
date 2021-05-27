@@ -14,6 +14,7 @@ import com.bumptech.glide.Glide
 import com.goat.lotech.R
 import com.goat.lotech.databinding.FragmentProfileBinding
 import com.goat.lotech.model.ProfileModel
+import com.goat.lotech.ui.activity.EditProfileActivity
 import com.goat.lotech.ui.activity.LoginActivity
 import com.goat.lotech.viewmodel.viewmodel.ProfileViewModel
 import com.google.firebase.auth.FirebaseAuth
@@ -57,6 +58,10 @@ class ProfileFragment : Fragment() {
 
         binding.btnLogout.setOnClickListener {
             logoutFromApplication()
+        }
+
+        binding.btnEdit.setOnClickListener{
+            startActivity(Intent(activity, EditProfileActivity::class.java))
         }
 
         // todo: ini dihapus aja
