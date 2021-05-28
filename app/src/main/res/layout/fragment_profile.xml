@@ -29,7 +29,8 @@
 
                 <TextView
                     android:id="@+id/name_profile"
-                    android:layout_width="wrap_content"
+                    android:layout_width="300dp"
+                    android:textAlignment="center"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
                     android:text="@string/cth_name"
@@ -43,6 +44,7 @@
                 <ImageView
                     android:id="@+id/btn_edit"
                     android:layout_width="30dp"
+                    android:layout_marginStart="5dp"
                     android:layout_height="30dp"
                     android:src="@drawable/ic_baseline_edit_24"
                     app:layout_constraintStart_toEndOf="@+id/name_profile"
