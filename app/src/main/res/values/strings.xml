@@ -83,6 +83,5 @@
     <string name="lemak_g">Lemak(g)</string>
     <string name="serat_g">Serat (g)</string>
     <string name="vitamin_g">Vitamin C (mg)</string>
-
-
+    <string name="submit">Submit</string>
 </resources>

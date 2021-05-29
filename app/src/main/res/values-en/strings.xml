@@ -67,5 +67,21 @@
     <string name="hello">Hallo</string>
     <string name="jumlah_kalori">Jumlah Kalori</string>
     <string name="keterangan">Keterangan</string>
+    <string name="kurang_cukup_berlebihan">Kurang/ Cukup/ Berlebihan</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="masukan_jenis_makanan">Tuliskan nama makanan yang kamu makan</string>
+    <string name="carbohidrat">Karbohidrat: </string>
+    <string name="energi">Energi:</string>
+    <string name="protein">Protein:</string>
+    <string name="lemak">Lemak:</string>
+    <string name="serat">Serat:</string>
+    <string name="vitaminC">Vitamin C:</string>
+    <string name="carbihidrat_g">Karbohidrat (g)</string>
+    <string name="energi_kal">Energi (kal)</string>
+    <string name="protein_g">Protein (g)</string>
+    <string name="lemak_g">Lemak(g)</string>
+    <string name="serat_g">Serat (g)</string>
+    <string name="vitamin_g">Vitamin C (mg)</string>
+    <string name="submit">Submit</string>
 
 </resources>
