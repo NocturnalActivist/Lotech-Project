@@ -24,9 +24,10 @@
                 android:background="@drawable/ic_baseline_person_24"
                 app:civ_border_color="@color/white" />
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center">
 
                     <TextView
                         android:id="@+id/name_profile"
@@ -36,20 +37,24 @@
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:textStyle="bold"
+                        android:paddingLeft="4dp"
+                        android:paddingRight="4dp"
                         android:background="@drawable/shape_round"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/btn_edit"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:src="@drawable/ic_baseline_edit_24"
-                        app:layout_constraintStart_toEndOf="@+id/name_profile"
-                        app:layout_constraintTop_toTopOf="parent" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:id="@+id/btn_edit"
+                    android:layout_width="30dp"
+                    android:layout_height="32dp"
+                    android:background="@drawable/shape_round"
+                    android:src="@drawable/ic_baseline_edit_24"
+                    app:layout_constraintStart_toEndOf="@+id/name_profile"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <ProgressBar
                 android:id="@+id/progress_bar"

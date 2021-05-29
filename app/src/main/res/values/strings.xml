@@ -15,7 +15,7 @@
     <string name="dont_have_account">I do not have account yet</string>
     <string name="signup">Sign Up</string>
     <string name="back_to_login">Back To Login</string>
-    <string name="name">Name</string>
+    <string name="name">Nama</string>
     <string name="image">image</string>
     <string name="konfirmasi">Konfirmasi</string>
     <string name="konfirmasi_text">Konfirmasi email anda, kemudian silahkan melakukan pengubahan kata sandi melalui email yang Lotech kirimkan pada email anda</string>
@@ -70,7 +70,7 @@
     <string name="keterangan">Berdasarkan berat badan, tinggi badan, dan umur, kamu disarankan untuk mengkonsumsi kalori sebesar ${Jumlah Kalori}/ hari dan hari ini kamu mengkonsumsi ${Jumlah kalori di input}, sehingga:</string>
     <string name="kurang_cukup_berlebihan">Kurang/ Cukup/ Berlebihan</string>
     <string name="nama_makanan">Nama Makanan</string>
-    <string name="masukan_jenis_makanan">Tuliskan nama makanan yang kamu makan</string>
+    <string name="masukan_jenis_makanan">Apa makanan yang kamu makan hari ini?</string>
     <string name="carbohidrat">Karbohidrat: </string>
     <string name="energi">Energi:</string>
     <string name="protein">Protein:</string>

@@ -18,7 +18,7 @@
         <!-- Primary brand color. -->
         <item name="colorPrimary">@color/pink_primary</item>
         <item name="colorPrimaryVariant">@color/pink_Dark</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
         <!-- Secondary brand color. -->
         <item name="colorSecondary">@color/pink_primary</item>
         <item name="colorSecondaryVariant">@color/pink_Light</item>

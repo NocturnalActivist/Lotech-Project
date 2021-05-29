@@ -9,7 +9,6 @@ import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -149,7 +148,7 @@ class ConsultFindDetailActivity : AppCompatActivity() {
             }
             binding.merekomendasikan.text = "Saya ingin merekomendasikan $name"
             binding.merekomendasikan.backgroundTintList =
-                ContextCompat.getColorStateList(applicationContext,R.color.pink_primary)
+                ContextCompat.getColorStateList(applicationContext,R.color.yellow)
 
 
             like -= 1
@@ -162,7 +161,7 @@ class ConsultFindDetailActivity : AppCompatActivity() {
             }
             binding.merekomendasikan.text = "Saya tidak ingin merekomendasikan $name"
             binding.merekomendasikan.backgroundTintList =
-                ContextCompat.getColorStateList(applicationContext,R.color.pink_Light)
+                ContextCompat.getColorStateList(applicationContext,R.color.yellow_light)
 
             like += 1
             AddConsultant.likedOrNot(like, uid)
@@ -185,12 +184,12 @@ class ConsultFindDetailActivity : AppCompatActivity() {
             isFavorite = true
             binding.merekomendasikan.text = "Saya tidak ingin merekomendasikan $name"
             binding.merekomendasikan.backgroundTintList =
-                ContextCompat.getColorStateList(applicationContext,R.color.pink_Light)
+                ContextCompat.getColorStateList(applicationContext,R.color.yellow_light)
         } else {
             isFavorite = false
             binding.merekomendasikan.text = "Saya ingin merekomendasikan $name"
             binding.merekomendasikan.backgroundTintList =
-                ContextCompat.getColorStateList(applicationContext,R.color.pink_primary)
+                ContextCompat.getColorStateList(applicationContext,R.color.yellow)
         }
     }
 
