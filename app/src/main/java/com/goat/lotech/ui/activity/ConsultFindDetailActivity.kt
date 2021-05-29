@@ -1,6 +1,7 @@
 package com.goat.lotech.ui.activity
 
 import android.annotation.SuppressLint
+import android.app.ProgressDialog
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
@@ -9,7 +10,6 @@ import android.text.InputType
 import android.util.Log
 import android.view.View
 import android.widget.EditText
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
@@ -22,6 +22,8 @@ import com.goat.lotech.model.ConsultantVerifyModel
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
+import java.text.SimpleDateFormat
+import java.util.*
 
 
 class ConsultFindDetailActivity : AppCompatActivity() {
@@ -80,11 +82,12 @@ class ConsultFindDetailActivity : AppCompatActivity() {
         // Cek Apakah Saya Merekomendasikan pakar ini?
         checkIfRecommendedUser(name, uid)
 
-        // update tarif konsultasi & hide chat button
+        // update tarif konsultasi & hide chat button, telpon dan transaksi
         if (FirebaseAuth.getInstance().currentUser?.uid == uid) {
 
             binding.chatPakar.visibility = View.INVISIBLE
             binding.telponPakar.visibility = View.INVISIBLE
+            binding.transaction.visibility = View.GONE
 
             binding.changePrice.visibility = View.VISIBLE
             binding.changePrice.setOnClickListener {
@@ -110,6 +113,48 @@ class ConsultFindDetailActivity : AppCompatActivity() {
             getMyNameAndMySelfPhotoBefore(name, selfPhoto, uid)
         }
 
+        // transfer uang terlebih dahulu
+        binding.transaction.setOnClickListener {
+            if(price != "0") {
+                val intent = Intent(this, ConsultPaymentActivity::class.java)
+                intent.putExtra(ConsultPaymentActivity.EXTRA_NAME, name)
+                intent.putExtra(ConsultPaymentActivity.EXTRA_UID, uid)
+                intent.putExtra(ConsultPaymentActivity.EXTRA_PRICE, price)
+                startActivity(intent)
+            } else {
+                makeFreeConsult(uid, name)
+            }
+        }
+
+    }
+
+    @SuppressLint("SimpleDateFormat")
+    private fun makeFreeConsult(uid: String?, pakarName: String?) {
+
+        AddConsultant.mProgressDialog = ProgressDialog(this)
+        AddConsultant.mProgressDialog.setMessage("Mohon tunggu hingga proses selesai...")
+        AddConsultant.mProgressDialog.setCanceledOnTouchOutside(false)
+        AddConsultant.mProgressDialog.show()
+
+        Firebase.firestore.collection("users")
+            .document(FirebaseAuth.getInstance().currentUser?.uid.toString())
+            .get()
+            .addOnSuccessListener {
+
+                val userName = it["name"].toString()
+
+                val simpleDateFormat = SimpleDateFormat("dd MMM yyyy, HH:mm:ss")
+                val format: String = simpleDateFormat.format(Date())
+                val myUid = FirebaseAuth.getInstance().currentUser?.uid.toString()
+                val timeInMillis = System.currentTimeMillis().toString()
+
+                AddConsultant.mProgressDialog.dismiss()
+                AddConsultant.makeFreeConsult(this, format, uid, myUid, userName, pakarName, timeInMillis )
+            }
+            .addOnFailureListener {
+                AddConsultant.mProgressDialog.dismiss()
+                it.printStackTrace()
+            }
     }
 
     private fun getMyNameAndMySelfPhotoBefore(name: String?, selfPhoto: String?, uid: String?) {
