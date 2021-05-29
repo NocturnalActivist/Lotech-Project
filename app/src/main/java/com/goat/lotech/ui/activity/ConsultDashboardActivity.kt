@@ -3,6 +3,7 @@ package com.goat.lotech.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.goat.lotech.R
@@ -25,11 +26,21 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
         binding.view.visibility = View.GONE
         binding.view2.visibility = View.GONE
         binding.view3.visibility = View.GONE
+        binding.view69.visibility = View.GONE
+        binding.textView2.visibility = View.GONE
+        binding.textView3.visibility = View.GONE
+        binding.textView4.visibility = View.GONE
+        binding.textView5.visibility = View.GONE
+        binding.textView6.visibility = View.GONE
+        binding.textView7.visibility = View.GONE
+        binding.textView8.visibility = View.GONE
+        binding.textView9.visibility = View.GONE
         checkUserRoleForVerifyUser()
 
         binding.view.setOnClickListener(this)
         binding.view2.setOnClickListener(this)
         binding.view3.setOnClickListener(this)
+        binding.view69.setOnClickListener(this)
 
     }
 
@@ -43,13 +54,29 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
                       binding.view.visibility = View.VISIBLE
                       binding.view2.visibility = View.VISIBLE
                       binding.view3.visibility = View.VISIBLE
+                      binding.view69.visibility = View.VISIBLE
+
+                      binding.textView2.visibility = View.VISIBLE
+                      binding.textView3.visibility = View.VISIBLE
+                      binding.textView4.visibility = View.VISIBLE
+                      binding.textView5.visibility = View.VISIBLE
+                      binding.textView6.visibility = View.VISIBLE
+                      binding.textView7.visibility = View.VISIBLE
+                      binding.textView8.visibility = View.VISIBLE
+                      binding.textView9.visibility = View.VISIBLE
                   } else {
                       binding.progressBar.visibility = View.GONE
                       binding.view.visibility = View.VISIBLE
                       binding.view2.visibility = View.VISIBLE
+                      binding.view69.visibility = View.VISIBLE
                       binding.imageView3.visibility = View.GONE
-                      binding.textView5.visibility = View.GONE
-                      binding.textView7.visibility = View.GONE
+
+                      binding.textView2.visibility = View.VISIBLE
+                      binding.textView3.visibility = View.VISIBLE
+                      binding.textView4.visibility = View.VISIBLE
+                      binding.textView6.visibility = View.VISIBLE
+                      binding.textView8.visibility = View.VISIBLE
+                      binding.textView9.visibility = View.VISIBLE
                   }
             }
 
@@ -69,9 +96,35 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
                 checkIfThisUserAlreadyRegistered()
             }
             R.id.view3 -> {
-                startActivity(Intent(this, ConsultVerifyUserActivity::class.java))
+                showAlertDialogToVerify()
+            }
+            R.id.view69 -> {
+                startActivity(Intent(this, ConsultHistoryActivity::class.java))
             }
         }
+    }
+
+    private fun showAlertDialogToVerify() {
+        val options = arrayOf(
+            "Verifikasi Berkasi Calon Pakar",
+            "Verifikasi Transaksi Pengguna",
+        )
+
+        val builder = android.app.AlertDialog.Builder(this)
+        builder.setTitle("Pilihan Verifikasi")
+        builder.setItems(options) { dialog, which ->
+            when (which) {
+                0 -> {
+                    startActivity(Intent(this, ConsultVerifyUserActivity::class.java))
+                    dialog.dismiss()
+                }
+                1 -> {
+                    startActivity(Intent(this, ConsultHistoryActivity::class.java))
+                    dialog.dismiss()
+                }
+            }
+        }
+        builder.create().show()
     }
 
     private fun checkIfThisUserAlreadyRegistered() {

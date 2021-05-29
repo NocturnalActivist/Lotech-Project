@@ -12,9 +12,14 @@ import android.os.Handler
 import android.os.HandlerThread
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
+import com.goat.lotech.R
 import com.goat.lotech.databinding.ActivityMlmainBinding
+import com.goat.lotech.ui.activity.LoginActivity
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import java.io.IOException
 
 
@@ -34,9 +39,11 @@ class MLMainActivity : AppCompatActivity() {
             synchronized(lock) {
                 if (runClassifier) {
                     classifyImage()
+                    return
                 }
             }
             backgroundHandler.post(this)
+            return
         }
     }
 
@@ -45,6 +52,8 @@ class MLMainActivity : AppCompatActivity() {
         private const val IMAGE_PICK_CAMERA_CODE = 112
         private const val IMAGE_PICK_GALLERY_CODE = 113
     }
+
+    private val cnt = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -128,9 +137,36 @@ class MLMainActivity : AppCompatActivity() {
 
         scaleDrawable.recycle()
 
-        runOnUiThread { binding.predictionText.text = text }
+        //runOnUiThread { binding.predictionText.text = text }
 
 
+        if(text.isNotEmpty()) {
+            loadDatasetFromFirebase(text.toString())
+        }
+    }
+
+    private fun loadDatasetFromFirebase(namaMakanan: String) {
+        Firebase.firestore
+            .collection("dataset")
+            .document(namaMakanan)
+            .get()
+            .addOnSuccessListener {
+                binding.progressBar.visibility = View.GONE
+
+                val builder = AlertDialog.Builder(this)
+                builder.setTitle(namaMakanan)
+                builder.setMessage("Kalori yang terkandung dalam 100 gram $namaMakanan yaitu ${it["energi(kal)"].toString()} kalori")
+                builder.setCancelable(true)
+                builder.setPositiveButton("YES") { dialog, _ ->
+                    dialog.dismiss()
+                }.show()
+
+            }
+            .addOnFailureListener {
+                binding.progressBar.visibility = View.GONE
+                Toast.makeText(this, "gagal: ${it.printStackTrace()}", Toast.LENGTH_SHORT).show()
+                Log.e("Error", it.toString())
+            }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -143,7 +179,6 @@ class MLMainActivity : AppCompatActivity() {
                     val selectedImage = BitmapFactory.decodeStream(inputStream)
                     binding.selectedImageView.setImageBitmap(selectedImage)
                     backgroundHandler.post(runPerically)
-                    binding.progressBar.visibility = View.GONE
                 }
 
             }
