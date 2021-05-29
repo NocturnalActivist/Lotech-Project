@@ -137,10 +137,10 @@ class ProfileFragment : Fragment() {
                     binding.nameProfile.text = updateUserData.text
                 }
                 "Tinggi Badan" -> {
-                    binding.tvHeight.text = updateUserData.text
+                    binding.tvHeight.text = updateUserData.text.toString() + " cm"
                 }
                 else -> {
-                    binding.tvWeight.text = updateUserData.text
+                    binding.tvWeight.text = updateUserData.text.toString() + " kg"
                 }
             }
             dialog.dismiss()
@@ -162,8 +162,8 @@ class ProfileFragment : Fragment() {
     @SuppressLint("SetTextI18n")
     private fun getProfile(data: ProfileModel) {
         binding.nameProfile.text = data.name
-        binding.tvHeight.text = data.heightBody + " CM"
-        binding.tvWeight.text = data.weightBody + " KG"
+        binding.tvHeight.text = data.heightBody + " cm"
+        binding.tvWeight.text = data.weightBody + " kg"
         binding.tvEmail.text = data.email
         binding.tvGender.text = data.gender
         binding.tvBirthdate.text = data.birthDate

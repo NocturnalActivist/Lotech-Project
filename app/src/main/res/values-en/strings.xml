@@ -63,7 +63,30 @@
     <string name="lorem_insum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="edit_photo_profile">Pilih Foto</string>
+
+    <string name="tv_food_quality">FOOD QUALITY</string>
+    <string name="hello">Hallo</string>
+    <string name="jumlah_kalori">Jumlah Kalori</string>
+    <string name="keterangan">Keterangan</string>
+    <string name="kurang_cukup_berlebihan">Kurang/ Cukup/ Berlebihan</string>
+    <string name="nama_makanan">Nama Makanan</string>
+    <string name="masukan_jenis_makanan">Tuliskan nama makanan yang kamu makan</string>
+    <string name="carbohidrat">Karbohidrat: </string>
+    <string name="energi">Energi:</string>
+    <string name="protein">Protein:</string>
+    <string name="lemak">Lemak:</string>
+    <string name="serat">Serat:</string>
+    <string name="vitaminC">Vitamin C:</string>
+    <string name="carbihidrat_g">Karbohidrat (g)</string>
+    <string name="energi_kal">Energi (kal)</string>
+    <string name="protein_g">Protein (g)</string>
+    <string name="lemak_g">Lemak(g)</string>
+    <string name="serat_g">Serat (g)</string>
+    <string name="vitamin_g">Vitamin C (mg)</string>
+    <string name="submit">Submit</string>
+
     <string name="activity">Aktifitas</string>
     <string name="history">Riwayat</string>
+
 
 </resources>

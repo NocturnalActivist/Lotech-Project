@@ -32,9 +32,11 @@
             android:layout_marginTop="16dp"
             android:text="Full Name"
             android:textAlignment="center"
-            android:textColor="@color/black"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            android:background="@color/yellow"
+            android:textColor="@color/black"/>
+
 
         <TextView
             android:id="@+id/sertifikat_keahlian"
@@ -46,6 +48,7 @@
             android:textColor="@color/black"
             android:textSize="24sp"
             android:textStyle="bold" />
+
 
 
         <TextView
@@ -76,7 +79,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:backgroundTint="@color/yellow">
 
             <TextView
                 android:id="@+id/price"
@@ -97,8 +101,9 @@
                 android:padding="10dp"
                 android:src="@drawable/ic_baseline_create_24"
                 android:visibility="gone"
-                app:tint="@color/pink_primary" />
+                app:tint="@color/yellow" />
 
+              
 
         </LinearLayout>
 
@@ -153,6 +158,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:background="@color/yellow"
+            android:textColor="@color/black"
             android:text="Saya merekomendasikan dia" />
 
         <LinearLayout
@@ -167,15 +174,21 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="5dp"
                 android:layout_weight="0.4"
-                android:text="Telpon Pakar" />
+                android:text="Telpon Pakar"
+                android:layout_marginEnd="5dp"
+                android:background="@color/yellow"
+                android:textColor="@color/black"/>
+
 
             <Button
                 android:id="@+id/chatPakar"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="5dp"
-                android:layout_weight="0.4"
-                android:text="Chat Pakar" />
+                android:text="Chat Pakar"
+                android:background="@color/yellow"
+                android:textColor="@color/black"/>
+
 
         </LinearLayout>
 

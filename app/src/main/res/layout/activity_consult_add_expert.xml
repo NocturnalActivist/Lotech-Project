@@ -108,6 +108,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.406"
             app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/black"
+            android:background="@color/yellow"
             app:layout_constraintTop_toBottomOf="@+id/uploadSelfPhoto" />
 
         <Button
@@ -115,7 +117,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
+            android:background="@color/yellow"
             android:text="Unggah Foto Formal"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
             tools:layout_editor_absoluteX="13dp" />
 
@@ -127,7 +131,9 @@
             android:text="Unggah Sertifikat Keahlian"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/uploadKTP" />
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/uploadKTP"
+            android:background="@color/yellow"/>
 
 
         <ProgressBar
@@ -150,6 +156,8 @@
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
+            android:background="@color/blue_primary"
+            android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
