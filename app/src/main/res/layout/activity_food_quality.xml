@@ -22,34 +22,45 @@
         android:id="@+id/imageView4"
         android:layout_width="155dp"
         android:layout_height="155dp"
-        android:layout_marginStart="160dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="39dp"
         android:src="@drawable/icon_hello"
-        app:layout_constraintStart_toEndOf="@+id/tv_hello"
-        app:layout_constraintTop_toBottomOf="@+id/textView9" />
+        app:layout_constraintStart_toEndOf="@+id/linear"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"/>
 
-    <TextView
-        android:id="@+id/tv_hello"
+    <LinearLayout
+        android:id="@+id/linear"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="121dp"
-        android:text="@string/hello"
-        android:textSize="20dp"
-        android:textStyle="bold"
+        android:layout_height="100dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="150dp"
+        android:orientation="vertical"
+        android:background="@drawable/bg_sender"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/tv_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="33dp"
-        android:layout_marginTop="18dp"
-        android:text="@string/cth_name"
-        android:textSize="20dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_hello" />
+        <TextView
+            android:id="@+id/tv_hello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/hello"
+            android:textSize="20dp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cth_name"
+            android:layout_marginTop="15dp"
+            android:layout_marginRight="22dp"
+            android:layout_marginLeft="10dp"
+            android:textSize="20dp"/>
+    </LinearLayout>
 
     <androidx.cardview.widget.CardView
         android:id="@+id/tbbb"
@@ -115,7 +126,7 @@
         android:id="@+id/tv_result_calories"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:text="@string/jumlah_kalori"
         android:textSize="20dp"
         android:textStyle="bold"
@@ -129,17 +140,22 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="@string/keterangan"
+        android:padding="10dp"
         android:textSize="20dp"
+        android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_result_calories"/>
 
     <View
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_marginTop="139dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:layout_marginEnd="50dp"
         android:background="@drawable/shape_round"
         android:backgroundTint="@color/yellow"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_ket_calories" />
 </androidx.constraintlayout.widget.ConstraintLayout>
