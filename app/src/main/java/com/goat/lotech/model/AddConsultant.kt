@@ -142,7 +142,9 @@ object AddConsultant {
             "pakarStatus" to "Menunggu persetujuan",
             "dateTime" to dateTime,
             "bukti" to "null",
-            "timeInMillis" to timeInMillis
+            "timeInMillis" to timeInMillis,
+            "price" to "0",
+            "bayarPakar" to "done",
         )
 
         Firebase.firestore
@@ -172,7 +174,8 @@ object AddConsultant {
         myUid: String,
         pakarName: String,
         pakarUid: String,
-        timeInMillis: String
+        timeInMillis: String,
+        price: String
     ) {
         mProgressDialog = ProgressDialog(context)
         mProgressDialog.setMessage("Mohon tunggu hingga proses selesai...")
@@ -195,7 +198,9 @@ object AddConsultant {
                     "pakarStatus" to "Menunggu persetujuan",
                     "dateTime" to format,
                     "bukti" to image,
-                    "timeInMillis" to timeInMillis
+                    "timeInMillis" to timeInMillis,
+                    "price" to price,
+                    "bayarPakar" to "waiting",
                 )
 
                 Firebase.firestore
@@ -253,6 +258,29 @@ object AddConsultant {
             .collection("consult_history")
             .document(timeInMillis)
             .update(role, "finish")
+            .addOnSuccessListener {
+                mProgressDialog.dismiss()
+                Toast.makeText(
+                    context,
+                    "Sukses melakukan transaksi, silahkan menunggu ketersediaan pakar untuk melaksanakan konsultasi",
+                    Toast.LENGTH_SHORT
+                ).show()
+            }
+            .addOnFailureListener {
+                mProgressDialog.dismiss()
+                it.printStackTrace()
+            }
+    }
+
+    fun bayarPakar(context: Context?, timeInMillis: String) {
+        mProgressDialog = ProgressDialog(context)
+        mProgressDialog.setMessage("Mohon tunggu hingga proses selesai...")
+        mProgressDialog.setCanceledOnTouchOutside(false)
+        mProgressDialog.show()
+        Firebase.firestore
+            .collection("consult_history")
+            .document(timeInMillis)
+            .update("bayarPakar", "done")
             .addOnSuccessListener {
                 mProgressDialog.dismiss()
                 Toast.makeText(

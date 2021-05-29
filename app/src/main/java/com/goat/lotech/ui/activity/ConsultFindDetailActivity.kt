@@ -119,6 +119,7 @@ class ConsultFindDetailActivity : AppCompatActivity() {
                 val intent = Intent(this, ConsultPaymentActivity::class.java)
                 intent.putExtra(ConsultPaymentActivity.EXTRA_NAME, name)
                 intent.putExtra(ConsultPaymentActivity.EXTRA_UID, uid)
+                intent.putExtra(ConsultPaymentActivity.EXTRA_PRICE, price)
                 startActivity(intent)
             } else {
                 makeFreeConsult(uid, name)

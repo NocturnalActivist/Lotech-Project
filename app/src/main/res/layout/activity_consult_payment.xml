@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/black"
+        android:text="@string/lorem_insum"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,31 +22,23 @@
         android:id="@+id/imgBukti"
         android:layout_width="match_parent"
         android:layout_height="250dp"
-        android:layout_marginTop="16dp"
         android:contentDescription="image"
+        android:scaleType="fitXY"
+        android:layout_marginTop="16dp"
         android:src="@drawable/ic_baseline_image_24"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@id/tvTransaction" />
+        app:layout_constraintTop_toBottomOf="@+id/tvTransaction" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="24dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnTransaction"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:backgroundTint="@color/yellow"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:text="Kirim bukti transaksi"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="gone"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imgBukti" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

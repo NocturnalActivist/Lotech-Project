@@ -42,7 +42,7 @@
     <string name="confirmedForgotPassowrdTitle">Berhasil Terkonfirmasi</string>
     <string name="messageConfirmed">Silahkan cek E-mail kamu, Lotech telah mengirimkan email untuk mengubah password</string>
     <string name="registered">Berhasil mendaftar</string>
-    <string name="messageRegistered">Silahakn verifikasi akun anda melalui email yang telah Lotech kirimkan ke E-mail kamu</string>
+    <string name="messageRegistered">Silahakan verifikasi akun anda melalui email yang telah Lotech kirimkan ke E-mail kamu</string>
     <string name="photo_profil">Photo Profil</string>
     <string name="food_quality">FOOD QUALITY</string>
     <string name="lifestyle">LIFESTYLE</string>
@@ -64,7 +64,7 @@
     <string name="lorem_insum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</string>
     <string name="edit_profile">Edit Profile</string>
     <string name="edit_photo_profile">Pilih Foto</string>
-    <string name="activity">Aktifitas</string>
+    <string name="activity">Aktivitas</string>
     <string name="history">Riwayat</string>
 
 

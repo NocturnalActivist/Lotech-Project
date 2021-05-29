@@ -27,11 +27,13 @@ class ConsultPaymentActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_UID = "uid"
         const val EXTRA_NAME = "name"
+        const val EXTRA_PRICE = "price"
         const val REQUEST_FROM_GALLERY_TO_SELF_PHOTO = 1001
     }
 
     var pakarName: String = ""
     var pakarUid: String = ""
+    var price: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +45,8 @@ class ConsultPaymentActivity : AppCompatActivity() {
 
         pakarName = intent.getStringExtra(EXTRA_NAME).toString()
         pakarUid = intent.getStringExtra(EXTRA_UID).toString()
-        binding.tvTransaction.text = "Silahkan melakukan pembayaran secara transfer melalui nomor rekening berikut : 1234567890, atas nama PT.Lotech Indonesia, untuk dapat melakukan konsultasi dengan $pakarName, \n\nKemudian unggah bukti transfer untuk kami verifikasi, Terima Kasih"
+        price = intent.getStringExtra(EXTRA_PRICE).toString()
+        binding.tvTransaction.text = "Silahkan melakukan pembayaran secara transfer melalui nomor rekening berikut : 1234567890, atas nama PT.Lotech Indonesia sejumlah $price, untuk dapat melakukan konsultasi dengan $pakarName, \n\nKemudian unggah bukti transfer untuk kami verifikasi, Terima Kasih"
 
         validateForm()
 
@@ -57,6 +60,8 @@ class ConsultPaymentActivity : AppCompatActivity() {
                 .compress(1024)
                 .maxResultSize(1080, 1080)
                 .start(REQUEST_FROM_GALLERY_TO_SELF_PHOTO)
+
+            binding.progressBar.visibility = View.VISIBLE
         }
     }
 
@@ -72,9 +77,15 @@ class ConsultPaymentActivity : AppCompatActivity() {
             Log.d("TAG", requestCode.toString())
             when (requestCode) {
                 REQUEST_FROM_GALLERY_TO_SELF_PHOTO -> {
+
+                    Glide.with(this)
+                        .load(data?.data)
+                        .placeholder(R.drawable.ic_baseline_image_24)
+                        .error(R.drawable.ic_baseline_image_24)
+                        .into(binding.imgBukti)
+
                     ConsultAddManager.uploadBuktiTransfer(this, data?.data!!)
 
-                    binding.progressBar.visibility = View.VISIBLE
                     // todo 5555 itu delay dummy, soalnya saya blm tau cara nunggu proses diatas selesai duluan, makanya saya buat dummy delay
                     Handler(Looper.getMainLooper()).postDelayed({
                         val image = ProfileManager.image
@@ -82,14 +93,10 @@ class ConsultPaymentActivity : AppCompatActivity() {
                         val format: String = simpleDateFormat.format(Date())
                         val myUid = FirebaseAuth.getInstance().currentUser?.uid.toString()
                         val timeInMillis = System.currentTimeMillis().toString()
-                        AddConsultant.uploadBuktiTransfer(image, this, format, myUid, pakarName, pakarUid, timeInMillis)
+                        AddConsultant.uploadBuktiTransfer(image, this, format, myUid, pakarName, pakarUid, timeInMillis, price)
 
-                        Glide.with(this)
-                            .load(image)
-                            .placeholder(R.drawable.ic_baseline_image_24)
-                            .error(R.drawable.ic_baseline_image_24)
-                            .into(binding.imgBukti)
-                    }, 7777)
+                        binding.progressBar.visibility = View.GONE
+                    }, 5555)
 
                 }
             }

@@ -10,7 +10,7 @@ import com.goat.lotech.databinding.ItemConsultHistoryBinding
 import com.goat.lotech.model.AddConsultant
 import com.goat.lotech.model.ConsultHistoryModel
 
-class ConsultHistoryAdapter(private val uid: String) : RecyclerView.Adapter<ConsultHistoryAdapter.ConsultViewHolder>() {
+class ConsultHistoryAdapter(private val uid: String, private val role: String) : RecyclerView.Adapter<ConsultHistoryAdapter.ConsultViewHolder>() {
 
     private val listHistory = ArrayList<ConsultHistoryModel>()
     fun setData(items: ArrayList<ConsultHistoryModel>) {
@@ -45,18 +45,21 @@ class ConsultHistoryAdapter(private val uid: String) : RecyclerView.Adapter<Cons
                 Log.e("TAG : ", "Uid: ${list.userUid} | ${list.userStatus}")
                 Log.e("TAG : ", "Uid: ${list.pakarUid} | ${list.pakarStatus}")
 
-
-
-                if(uid != list.pakarUid && list.userStatus == "Siap") {
-                    accept.visibility = View.INVISIBLE
-                    finish.visibility = View.VISIBLE
-                } else if (uid == list.pakarUid && list.pakarStatus == "Menunggu persetujuan") {
-                    accept.visibility = View.VISIBLE
-                    finish.visibility = View.INVISIBLE
-                } else if (uid == list.pakarUid && list.pakarStatus == "Siap") {
-                    accept.visibility = View.INVISIBLE
-                    finish.visibility = View.VISIBLE
+                if(role == "super"){
+                    bayar.visibility = View.VISIBLE
+                } else {
+                    if(uid != list.pakarUid && list.userStatus == "Siap") {
+                        accept.visibility = View.INVISIBLE
+                        finish.visibility = View.VISIBLE
+                    } else if (uid == list.pakarUid && list.pakarStatus == "Menunggu persetujuan") {
+                        accept.visibility = View.VISIBLE
+                        finish.visibility = View.INVISIBLE
+                    } else if (uid == list.pakarUid && list.pakarStatus == "Siap") {
+                        accept.visibility = View.INVISIBLE
+                        finish.visibility = View.VISIBLE
+                    }
                 }
+
 
                 accept.setOnClickListener {
                     AddConsultant.pakarReady(itemView.context, list.timeInMillis.toString())
@@ -73,6 +76,12 @@ class ConsultHistoryAdapter(private val uid: String) : RecyclerView.Adapter<Cons
                         AddConsultant.finishConsult(itemView.context, list.timeInMillis.toString(), "pakarStatus")
                         finish.visibility = View.INVISIBLE
                     }
+                }
+
+                bayar.setOnClickListener {
+                    AddConsultant.bayarPakar(itemView.context, list.timeInMillis.toString())
+                    bayar.visibility = View.INVISIBLE
+
 
                 }
             }

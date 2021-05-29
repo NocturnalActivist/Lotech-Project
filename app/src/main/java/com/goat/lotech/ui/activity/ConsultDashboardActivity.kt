@@ -69,6 +69,7 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
                       binding.view.visibility = View.VISIBLE
                       binding.view2.visibility = View.VISIBLE
                       binding.view69.visibility = View.VISIBLE
+                      binding.imageView3.visibility = View.GONE
 
                       binding.textView2.visibility = View.VISIBLE
                       binding.textView3.visibility = View.VISIBLE

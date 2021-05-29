@@ -66,6 +66,22 @@
         app:layout_constraintTop_toBottomOf="@+id/userName"
         app:layout_constraintVertical_bias="0.0" />
 
+    <Button
+        android:id="@+id/bayar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="@color/yellow"
+        android:text="bayar"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toEndOf="@id/view6"
+        app:layout_constraintHorizontal_bias="0.911"
+        app:layout_constraintStart_toStartOf="@+id/view6"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="@+id/view6"
+        app:layout_constraintVertical_bias="0.153" />
+
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/accept"
         android:layout_width="wrap_content"

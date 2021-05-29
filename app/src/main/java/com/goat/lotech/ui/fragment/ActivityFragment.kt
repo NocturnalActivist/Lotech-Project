@@ -1,6 +1,7 @@
 package com.goat.lotech.ui.fragment
 
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,6 +12,8 @@ import com.goat.lotech.databinding.FragmentActivityBinding
 import com.goat.lotech.viewmodel.adapter.ConsultHistoryAdapter
 import com.goat.lotech.viewmodel.viewmodel.ConsultHistoryViewModel
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 
 class ActivityFragment : Fragment() {
 
@@ -32,25 +35,49 @@ class ActivityFragment : Fragment() {
     }
 
     private fun showData() {
-        val uid = FirebaseAuth.getInstance().currentUser?.uid.toString()
         binding.rvHistory.layoutManager = LinearLayoutManager(activity)
-        val adapter = ConsultHistoryAdapter(uid)
+        val adapter = ConsultHistoryAdapter(uid, "user")
         adapter.notifyDataSetChanged()
         binding.rvHistory.adapter = adapter
 
+        Log.e("UID", uid)
         binding.progressBar.visibility = View.VISIBLE
-        viewModel.setListHistory(uid)
-        viewModel.getListHistory().observe(viewLifecycleOwner, {
-            if(it.size > 0) {
-                binding.noData.visibility = View.GONE
-                adapter.setData(it)
+
+        Firebase.firestore
+            .collection("consultant")
+            .document(uid)
+            .get()
+            .addOnSuccessListener {
+                if(it.exists()) {
+                    Log.e("TAG", "ada")
+                    viewModel.setListHistory(uid, "pakarUid")
+                    viewModel.getListHistory().observe(viewLifecycleOwner, { data ->
+                        if(data.size > 0) {
+                            binding.noData.visibility = View.GONE
+                            adapter.setData(data)
+                        }
+                        else {
+                            binding.noData.visibility = View.VISIBLE
+                        }
+                        binding.progressBar.visibility = View.GONE
+                    })
+                } else {
+                    Log.e("TAG", "bukan")
+                    viewModel.setListHistory(uid, "userUid")
+                    viewModel.getListHistory().observe(viewLifecycleOwner, { data ->
+                        if(data.size > 0) {
+                            binding.noData.visibility = View.GONE
+                            adapter.setData(data)
+                        }
+                        else {
+                            binding.noData.visibility = View.VISIBLE
+                        }
+                        binding.progressBar.visibility = View.GONE
+                    })
+                }
             }
-            else {
-                binding.noData.visibility = View.VISIBLE
+            .addOnFailureListener {
+                it.printStackTrace()
             }
-            binding.progressBar.visibility = View.GONE
-        })
     }
-
-
 }

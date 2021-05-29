@@ -155,7 +155,7 @@ class MLMainActivity : AppCompatActivity() {
 
                 val builder = AlertDialog.Builder(this)
                 builder.setTitle(namaMakanan)
-                builder.setMessage("Energi yang terkandung dalam 100 gram $namaMakanan yaitu ${it["energi(kal)"].toString()} kalori")
+                builder.setMessage("Kalori yang terkandung dalam 100 gram $namaMakanan yaitu ${it["energi(kal)"].toString()} kalori")
                 builder.setCancelable(true)
                 builder.setPositiveButton("YES") { dialog, _ ->
                     dialog.dismiss()

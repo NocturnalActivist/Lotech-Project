@@ -10,4 +10,5 @@ data class ConsultHistoryModel(
     var dateTime: String? = null,
     var bukti: String? = null,
     var timeInMillis: String? = null,
+    var price:String? = null,
 )
