@@ -15,7 +15,7 @@
         android:roundIcon="@drawable/logo_lotech2"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
-        <activity android:name=".ui.activity.FoodQualityActivity"></activity>
+        <activity android:name=".ui.activity.FoodQualityActivity" />
         <activity android:name=".ui.activity.EditProfileActivity" />
         <activity android:name=".ml.MLMainActivity" />
         <activity android:name=".ui.activity.ChatUserActivity" />

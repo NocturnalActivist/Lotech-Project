@@ -28,9 +28,8 @@ class ChatFragment : Fragment() {
     ): View {
         // Inflate the layout for this fragment
         binding = FragmentChatBinding.inflate(layoutInflater, container, false)
-
+        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ChatViewModel::class.java]
         showData()
-
         return binding.root
     }
 
@@ -52,7 +51,7 @@ class ChatFragment : Fragment() {
     }
 
     private fun showListDataChat(name: String, image: String) {
-        viewModel = ViewModelProvider(this, ViewModelProvider.NewInstanceFactory())[ChatViewModel::class.java]
+
 
         binding.rvChat.layoutManager = LinearLayoutManager(activity)
         val adapter = ChatAdapter(name, image)
