@@ -15,7 +15,6 @@ import com.goat.lotech.R
 import com.goat.lotech.databinding.ActivityConsultPaymentBinding
 import com.goat.lotech.model.AddConsultant
 import com.goat.lotech.storage.ConsultAddManager
-import com.goat.lotech.storage.ProfileManager
 import com.google.firebase.auth.FirebaseAuth
 import java.text.SimpleDateFormat
 import java.util.*
@@ -88,7 +87,7 @@ class ConsultPaymentActivity : AppCompatActivity() {
 
                     // todo 5555 itu delay dummy, soalnya saya blm tau cara nunggu proses diatas selesai duluan, makanya saya buat dummy delay
                     Handler(Looper.getMainLooper()).postDelayed({
-                        val image = ProfileManager.image
+                        val image = ConsultAddManager.buktiTransfer
                         val simpleDateFormat = SimpleDateFormat("dd MMM yyyy, HH:mm:ss")
                         val format: String = simpleDateFormat.format(Date())
                         val myUid = FirebaseAuth.getInstance().currentUser?.uid.toString()

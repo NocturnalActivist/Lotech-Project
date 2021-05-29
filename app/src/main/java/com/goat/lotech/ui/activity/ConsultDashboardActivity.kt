@@ -3,7 +3,6 @@ package com.goat.lotech.ui.activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AlertDialog
 import com.goat.lotech.R
@@ -35,6 +34,10 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
         binding.textView7.visibility = View.GONE
         binding.textView8.visibility = View.GONE
         binding.textView9.visibility = View.GONE
+        binding.imageView.visibility = View.GONE
+        binding.imageView2.visibility = View.GONE
+        binding.imageView3.visibility = View.GONE
+        binding.imageView4.visibility = View.GONE
         checkUserRoleForVerifyUser()
 
         binding.view.setOnClickListener(this)
@@ -64,12 +67,22 @@ class ConsultDashboardActivity : AppCompatActivity(), View.OnClickListener {
                       binding.textView7.visibility = View.VISIBLE
                       binding.textView8.visibility = View.VISIBLE
                       binding.textView9.visibility = View.VISIBLE
+
+                      binding.imageView.visibility = View.VISIBLE
+                      binding.imageView2.visibility = View.VISIBLE
+                      binding.imageView3.visibility = View.VISIBLE
+                      binding.imageView4.visibility = View.VISIBLE
+
                   } else {
                       binding.progressBar.visibility = View.GONE
                       binding.view.visibility = View.VISIBLE
                       binding.view2.visibility = View.VISIBLE
                       binding.view69.visibility = View.VISIBLE
+
                       binding.imageView3.visibility = View.GONE
+                      binding.imageView.visibility = View.VISIBLE
+                      binding.imageView2.visibility = View.VISIBLE
+                      binding.imageView4.visibility = View.VISIBLE
 
                       binding.textView2.visibility = View.VISIBLE
                       binding.textView3.visibility = View.VISIBLE
