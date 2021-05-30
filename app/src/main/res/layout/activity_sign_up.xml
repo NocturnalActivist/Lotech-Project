@@ -33,7 +33,6 @@
                 android:id="@+id/edit_name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FBE9E7"
                 android:hint="@string/name"
                 android:inputType="textPersonName"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -62,7 +61,6 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FBE9E7"
             android:text="@string/gender"
             android:textAlignment="textStart"
             android:textSize="18sp"
@@ -70,8 +68,7 @@
         <RadioGroup
             android:id="@+id/jenis_kelamin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FBE9E7">
+            android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/male"
                 android:layout_width="wrap_content"
@@ -100,7 +97,6 @@
                 android:id="@+id/edit_height_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/height"
                 android:inputType="text|number"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -116,7 +112,6 @@
                 android:id="@+id/edit_weight_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/weight"
                 android:inputType="text|number"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -147,7 +142,6 @@
                 android:id="@+id/edit_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/password"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
