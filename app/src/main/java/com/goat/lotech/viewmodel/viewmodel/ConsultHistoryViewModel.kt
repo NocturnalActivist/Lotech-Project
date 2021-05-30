@@ -88,12 +88,17 @@ class ConsultHistoryViewModel : ViewModel() {
                 .get()
                 .addOnSuccessListener { documents ->
                     for(document in documents) {
+                        // potongan 3 persen untuk tim lotech
+                        val threePercentCut = Integer.parseInt(document.data["price"].toString()) * 0.03
+                        val paymentPercentage = Integer.parseInt(document.data["price"].toString()) - threePercentCut.toInt()
+
                         val model = ConsultHistoryModel()
+                        model.timeInMillis = document.data["timeInMillis"].toString()
                         model.pakarName = document.data["pakarName"].toString()
                         model.userName = document.data["userName"].toString()
                         model.pakarStatus = document.data["pakarStatus"].toString()
                         model.dateTime = document.data["dateTime"].toString()
-                        model.price = document.data["price"].toString()
+                        model.price = "Rp. $paymentPercentage"
 
                         listItem.add(model)
                     }

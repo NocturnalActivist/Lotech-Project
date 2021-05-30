@@ -15,6 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_lotech"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
+        <activity android:name=".ui.activity.ConsultPaymentProofActivity"></activity>
         <activity android:name=".ui.activity.ConsultPaymentActivity" />
         <activity android:name=".ui.activity.ConsultHistoryActivity" />
         <activity android:name=".ui.activity.FoodQualityActivity" />

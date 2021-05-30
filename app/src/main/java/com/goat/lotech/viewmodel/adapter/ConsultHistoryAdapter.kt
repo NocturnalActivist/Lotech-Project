@@ -1,6 +1,7 @@
 package com.goat.lotech.viewmodel.adapter
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -9,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.goat.lotech.databinding.ItemConsultHistoryBinding
 import com.goat.lotech.model.AddConsultant
 import com.goat.lotech.model.ConsultHistoryModel
+import com.goat.lotech.ui.activity.ConsultPaymentProofActivity
 
 class ConsultHistoryAdapter(private val uid: String, private val role: String) : RecyclerView.Adapter<ConsultHistoryAdapter.ConsultViewHolder>() {
 
@@ -39,14 +41,16 @@ class ConsultHistoryAdapter(private val uid: String, private val role: String) :
                 userName.text = list.userName
                 status.text = list.pakarStatus
                 dateTime.text = list.dateTime
-
-
-                Log.e("TAG : ", "Uid: $uid")
-                Log.e("TAG : ", "Uid: ${list.userUid} | ${list.userStatus}")
-                Log.e("TAG : ", "Uid: ${list.pakarUid} | ${list.pakarStatus}")
+                price.text = list.price
 
                 if(role == "super"){
                     bayar.visibility = View.VISIBLE
+
+                    view6.setOnClickListener {
+                        val intent = Intent(itemView.context, ConsultPaymentProofActivity::class.java)
+                        intent.putExtra(ConsultPaymentProofActivity.EXTRA_DOCUMENT, list.timeInMillis)
+                        itemView.context.startActivity(intent)
+                    }
                 } else {
                     if(uid != list.pakarUid && list.userStatus == "Siap") {
                         accept.visibility = View.INVISIBLE
@@ -81,8 +85,6 @@ class ConsultHistoryAdapter(private val uid: String, private val role: String) :
                 bayar.setOnClickListener {
                     AddConsultant.bayarPakar(itemView.context, list.timeInMillis.toString())
                     bayar.visibility = View.INVISIBLE
-
-
                 }
             }
         }

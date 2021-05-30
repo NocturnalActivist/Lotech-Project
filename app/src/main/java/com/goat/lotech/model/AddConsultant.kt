@@ -205,7 +205,7 @@ object AddConsultant {
 
                 Firebase.firestore
                     .collection("consult_history")
-                    .document(System.currentTimeMillis().toString())
+                    .document(timeInMillis)
                     .set(consultHistory)
                     .addOnSuccessListener {
                         mProgressDialog.dismiss()
@@ -268,7 +268,7 @@ object AddConsultant {
             }
             .addOnFailureListener {
                 mProgressDialog.dismiss()
-                it.printStackTrace()
+                Log.e("error", it.toString())
             }
     }
 
@@ -285,13 +285,18 @@ object AddConsultant {
                 mProgressDialog.dismiss()
                 Toast.makeText(
                     context,
-                    "Sukses melakukan transaksi, silahkan menunggu ketersediaan pakar untuk melaksanakan konsultasi",
+                    "Sukses membayar pakar",
                     Toast.LENGTH_SHORT
                 ).show()
             }
             .addOnFailureListener {
                 mProgressDialog.dismiss()
-                it.printStackTrace()
+                Toast.makeText(
+                    context,
+                    "Ups, ada kendala nih di sistem",
+                    Toast.LENGTH_SHORT
+                ).show()
+                Log.e("error", it.toString())
             }
     }
 }
