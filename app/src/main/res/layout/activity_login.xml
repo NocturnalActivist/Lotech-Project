@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/login_gradient"
     android:fitsSystemWindows="true"
-    android:theme="@style/Theme.AppCompat.DayNight"
+    android:theme="@style/Theme.Yellow"
     tools:context=".ui.activity.LoginActivity">
 
     <LinearLayout
@@ -62,11 +62,11 @@
 
         <Button
             android:id="@+id/btn_login"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
-            android:background="@color/blue_primary"
+            android:background="@drawable/round_blue"
             android:text="@string/login"/>
 
         <TextView

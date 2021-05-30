@@ -5,7 +5,7 @@
     android:background="@drawable/signup_gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.AppCompat.DayNight"
+    android:theme="@style/Theme.Yellow"
     tools:context=".ui.activity.SignUpActivity">
 
     <LinearLayout
@@ -64,6 +64,7 @@
             android:text="@string/gender"
             android:textAlignment="textStart"
             android:textSize="18sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
         <RadioGroup
             android:id="@+id/jenis_kelamin"
@@ -155,7 +156,7 @@
 
         <Button
             android:id="@+id/btn_signup"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
