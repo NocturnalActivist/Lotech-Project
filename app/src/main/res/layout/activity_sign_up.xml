@@ -33,7 +33,6 @@
                 android:id="@+id/edit_name_signup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="#FBE9E7"
                 android:hint="@string/name"
                 android:inputType="textPersonName"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -62,16 +61,15 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FBE9E7"
             android:text="@string/gender"
             android:textAlignment="textStart"
             android:textSize="18sp"
+            android:textColor="@color/black"
             android:layout_marginTop="20dp"/>
         <RadioGroup
             android:id="@+id/jenis_kelamin"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="#FBE9E7">
+            android:layout_height="wrap_content">
             <RadioButton
                 android:id="@+id/male"
                 android:layout_width="wrap_content"
@@ -100,7 +98,6 @@
                 android:id="@+id/edit_height_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/height"
                 android:inputType="text|number"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -116,7 +113,6 @@
                 android:id="@+id/edit_weight_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/weight"
                 android:inputType="text|number"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -124,14 +120,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_email_signup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -148,7 +143,6 @@
                 android:id="@+id/edit_password_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/password"
                 android:inputType="textPassword"/>
         </com.google.android.material.textfield.TextInputLayout>
@@ -162,10 +156,12 @@
 
         <Button
             android:id="@+id/btn_signup"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:layout_marginTop="16dp"
+            android:background="@drawable/round_yellow"
+            android:textColor="@color/black"
             android:text="@string/signup"/>
 
         <TextView

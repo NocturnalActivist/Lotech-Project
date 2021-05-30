@@ -6,6 +6,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:theme="@style/Theme.AppCompat.DayNight"
         tools:context=".ui.activity.ConsultAddExpertActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -109,7 +110,7 @@
             app:layout_constraintHorizontal_bias="0.406"
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/black"
-            android:background="@color/yellow"
+            android:background="@drawable/round_yellow"
             app:layout_constraintTop_toBottomOf="@+id/uploadSelfPhoto" />
 
         <Button
@@ -117,7 +118,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:background="@color/yellow"
+            android:background="@drawable/round_yellow"
             android:text="Unggah Foto Formal"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/textInputLayout4"
@@ -133,7 +134,7 @@
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/uploadKTP"
-            android:background="@color/yellow"/>
+            android:background="@drawable/round_yellow"/>
 
 
         <ProgressBar
@@ -149,14 +150,14 @@
         <Button
             android:id="@+id/btnMendaftar"
             android:layout_width="match_parent"
-            android:layout_height="70dp"
+            android:layout_height="60dp"
             android:text="Mendaftar"
             android:layout_marginTop="30dp"
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:background="@color/blue_primary"
+            android:background="@drawable/round_blue"
             android:textColor="@color/black"
             app:layout_constraintTop_toBottomOf="@+id/progressBar" />
 

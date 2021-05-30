@@ -19,5 +19,6 @@
     <color name="blue_second">#00E5FF</color>
     <color name="yellow">#FFE457</color>
     <color name="yellow_second">#FFFF5A</color>
+    <color name="yellow_light">#FFF9C4</color>
 
 </resources>
