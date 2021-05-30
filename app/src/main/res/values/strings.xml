@@ -71,7 +71,7 @@
     <string name="keterangan">Berdasarkan berat badan, tinggi badan, dan umur, kamu disarankan untuk mengkonsumsi kalori sebesar ${Jumlah Kalori}/ hari dan hari ini kamu mengkonsumsi ${Jumlah kalori di input}, sehingga:</string>
     <string name="kurang_cukup_berlebihan">Kurang/ Cukup/ Berlebihan</string>
     <string name="nama_makanan">Nama Makanan</string>
-    <string name="masukan_jenis_makanan">Tuliskan nama makanan yang kamu makan</string>
+    <string name="masukan_jenis_makanan">Tuliskan nama makanan yang kamu makan, contoh:  Ayam Goreng, Nasi Goreng, Sayur Daun Singkong</string>
     <string name="carbohidrat">Karbohidrat: </string>
     <string name="energi">Energi:</string>
     <string name="protein">Protein:</string>

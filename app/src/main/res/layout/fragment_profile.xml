@@ -35,6 +35,8 @@
                         android:text="@string/cth_name"
                         android:textColor="@color/black"
                         android:textSize="24sp"
+                        android:layout_marginStart="50dp"
+                        android:layout_marginEnd="50dp"
                         android:textStyle="bold"
                         android:background="@drawable/shape_round"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -45,6 +47,7 @@
                         android:id="@+id/btn_edit"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_marginStart="5dp"
                         android:src="@drawable/ic_baseline_edit_24"
                         app:layout_constraintStart_toEndOf="@+id/name_profile"
                         app:layout_constraintTop_toTopOf="parent" />
@@ -127,27 +130,27 @@
 
             <TextView
                 android:id="@+id/tvInfo"
-                android:layout_below="@id/tbbb"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tbbb"
+                android:layout_centerHorizontal="true"
                 android:layout_marginStart="20dp"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="10dp"
                 android:text="@string/informasi_pribadi"
                 android:textColor="@color/black"
-                android:layout_centerHorizontal="true"
                 android:textSize="18sp"
-                android:layout_marginTop="16dp"
                 android:textStyle="bold" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_below="@id/tvInfo"
                 android:layout_gravity="center"
                 android:layout_margin="16dp"
                 android:layout_marginTop="10dp"
-                android:orientation="vertical"
-                android:layout_below="@id/tvInfo">
+                android:orientation="vertical">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -225,8 +228,8 @@
                     android:layout_gravity="end"
                     android:layout_marginBottom="50dp"
                     android:backgroundTint="@color/yellow"
-                    android:textColor="@color/black"
-                    android:text="Logout" />
+                    android:text="Logout"
+                    android:textColor="@color/black" />
             </LinearLayout>
 
         </RelativeLayout>
