@@ -42,8 +42,8 @@ object FoodQuality {
 
 
                 tvName.text = it["name"].toString()
-                tvWeight.text = weight + "kg"
-                tvHeight.text = height + "cm"
+                tvWeight.text = weight
+                tvHeight.text = height
 
                 tvHasil.text = "Kekurangan kalori 100%"
 
