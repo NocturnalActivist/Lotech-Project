@@ -7,7 +7,6 @@ data class Articles(
     val articles: List<ArticlesItem>,
 )
 
-
 data class ArticlesItem(
 
     @field:SerializedName("urlToImage")

@@ -5,7 +5,7 @@
     android:background="@drawable/signup_gradient"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:theme="@style/Theme.Yellow"
+    android:theme="@style/Theme.AppCompat.DayNight"
     tools:context=".ui.activity.SignUpActivity">
 
     <LinearLayout
@@ -124,14 +124,13 @@
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/input_email_signup"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp"
             app:errorEnabled="true">
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/edit_email_signup"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#FBE9E7"
                 android:hint="@string/email"
                 android:inputType="textEmailAddress"/>
         </com.google.android.material.textfield.TextInputLayout>
