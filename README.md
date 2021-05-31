@@ -15,17 +15,17 @@ Lotech, your bestfriend to maintain healthy lifestyle and nutritional food consu
 
 # Android Developer
 
-Bagas Pangestu A1191511
+Bagas Pangestu A1191511 |
 Yustika Monita A2532380
 
 # Machine Learning
 
-Leja Aprianza M1191508
+Leja Aprianza M1191508 |
 Alivia Zahra M0040218
 
 # Cloud Computing
 
-Reza Albian Jawas C0080783
+Reza Albian Jawas C0080783 |
 Alvin Pasmah C1191509
 
 ## Getting Started
