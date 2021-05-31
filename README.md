@@ -1,7 +1,20 @@
 # Lotech - Low Calories Technology
-by: Greatest Of All Time (G.O.A.T) Bangkit Team
+Build With Love by: Greatest Of All Time (G.O.A.T) Bangkit Team
 
-Build With Love By: Bagas, Yustika, Leja, Alivia, Alvin, dan Reza
+# Description
+Low Calories Technology app (Lotech) Became our own Personal Diet and Fitness Coach coming to life in the Digital World
+
+# Android Developer
+Bagas Pangestu A1191511
+Yustika Monita A2532380
+
+# Machine Learning
+Leja Aprianza M1191508
+Alivia Zahra M0040218
+
+# Cloud Computing
+Reza Albian Jawas C0080783
+Alvin Pasmah C1191509
 
 ## Getting Started
 
