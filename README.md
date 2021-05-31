@@ -2,17 +2,29 @@
 Build With Love by: Greatest Of All Time (G.O.A.T) Bangkit Team
 
 # Description
-Low Calories Technology app (Lotech) Became our own Personal Diet and Fitness Coach coming to life in the Digital World
+Our idea:
+To be your companion and personal diet assistant in the reach of your hand and always by Your side.
+
+Many people struggling to maintain and manage high quality and nutritional diet.
+
+The problem is:
+They don't have time, option, budget and someone that could remind and motivate them for their goal.
+
+Meet the Solution!
+Lotech, your bestfriend to maintain healthy lifestyle and nutritional food consumption. with our integrated AI, Machine Learning and Health consultant, our App will smart enough about your lifestyle and diet and always by your side to help and aid you in your step for better healthy living.
 
 # Android Developer
+
 Bagas Pangestu A1191511
 Yustika Monita A2532380
 
 # Machine Learning
+
 Leja Aprianza M1191508
 Alivia Zahra M0040218
 
 # Cloud Computing
+
 Reza Albian Jawas C0080783
 Alvin Pasmah C1191509
 
