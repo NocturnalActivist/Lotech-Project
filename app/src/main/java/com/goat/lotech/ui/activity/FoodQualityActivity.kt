@@ -75,12 +75,13 @@ class FoodQualityActivity : AppCompatActivity() {
         adapter.notifyDataSetChanged()
         binding.recyclerView.adapter = adapter
 
-        binding.tvEnergi.text = "${listItem[listItem.size-1].calTot.toString()} kal"
-        binding.tvProtein.text = "${listItem[listItem.size-1].protTot.toString()} gr"
-        binding.tvLemak.text = "${listItem[listItem.size-1].fatTor.toString()} gr"
-        binding.tvCarbohidrat.text = "${listItem[listItem.size-1].carTor.toString()} gr"
-        binding.tvSerat.text = "${listItem[listItem.size-1].seratTor.toString()} gr"
-        binding.tvVitaminC.text = "${listItem[listItem.size-1].vitcTot.toString()} mg"
+        binding.tvEnergi.text = "${String.format("%.2f", listItem[listItem.size-1].calTot)} kal"
+        binding.tvProtein.text = "${String.format("%.2f", listItem[listItem.size-1].protTot)} gr"
+        binding.tvLemak.text = "${String.format("%.2f", listItem[listItem.size-1].fatTor)} gr"
+        binding.tvCarbohidrat.text = "${String.format("%.2f", listItem[listItem.size-1].carTor)} gr"
+        binding.tvSerat.text = "${String.format("%.2f", listItem[listItem.size-1].seratTor)} gr"
+        binding.tvVitaminC.text = "${String.format("%.2f", listItem[listItem.size-1].vitcTot)} mg"
+
 
         if(FoodQuality.gender == "Laki-laki") {
             val bmr = 66.5 + (13.7 * binding.tvWeight.text.toString().toDouble()) + (5 * binding.tvHeight.text.toString().toDouble()) - (6.8 * FoodQuality.birthDate!!)

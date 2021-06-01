@@ -42,7 +42,7 @@
         android:layout_marginBottom="5dp"
         android:layout_marginStart="5dp"
         android:contentDescription="@string/button"
-        android:backgroundTint="@color/pink_primary"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:src="@drawable/ic_baseline_attach_file_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -54,7 +54,7 @@
         android:layout_marginEnd="5dp"
         android:layout_marginBottom="5dp"
         android:contentDescription="@string/button"
-        android:backgroundTint="@color/pink_primary"
+        android:backgroundTint="@android:color/holo_orange_light"
         android:src="@drawable/ic_baseline_send_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
