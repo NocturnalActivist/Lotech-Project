@@ -7,11 +7,6 @@ To be your companion and personal diet assistant in the reach of your hand and a
 
 Many people struggling to maintain and manage high quality and nutritional diet.
 
-The problem is:
-They don't have time, option, budget and someone that could remind and motivate them for their goal.
-
-Meet the Solution!
-Lotech, your bestfriend to maintain healthy lifestyle and nutritional food consumption. with our integrated AI, Machine Learning and Health consultant, our App will smart enough about your lifestyle and diet and always by your side to help and aid you in your step for better healthy living.
 
 # Android Developer
 
