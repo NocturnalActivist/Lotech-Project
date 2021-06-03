@@ -7,6 +7,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.goat.lotech.databinding.ActivityFoodQualityBinding
 import com.goat.lotech.model.FoodModel
@@ -42,7 +43,11 @@ class FoodQualityActivity : AppCompatActivity() {
         )
 
         binding.btnFood.setOnClickListener {
-            getFoodDatasetFromDB()
+            if(binding.btnFood.text.toString().trim().isNotEmpty()) {
+                getFoodDatasetFromDB()
+            } else {
+                Toast.makeText(this, "Kolom tidak boleh kosong", Toast.LENGTH_SHORT).show()
+            }
         }
     }
 

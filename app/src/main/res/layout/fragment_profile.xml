@@ -30,9 +30,12 @@
 
                     <TextView
                         android:id="@+id/name_profile"
-                        android:layout_width="wrap_content"
+                        android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:text="@string/cth_name"
+                        android:textAlignment="center"
+                        android:maxLines="1"
+                        android:padding="5dp"
                         android:textColor="@color/black"
                         android:textSize="24sp"
                         android:layout_marginStart="50dp"
@@ -47,8 +50,10 @@
 
                     <ImageView
                         android:id="@+id/btn_edit"
-                        android:layout_width="30dp"
-                        android:layout_height="32dp"
+                        android:layout_width="40dp"
+                        android:layout_marginStart="5dp"
+                        android:contentDescription="@string/image"
+                        android:layout_height="40dp"
                         android:background="@drawable/shape_round"
                         android:src="@drawable/ic_baseline_edit_24"
                         app:layout_constraintStart_toEndOf="@+id/name_profile"
