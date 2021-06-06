@@ -43,7 +43,7 @@ class FoodQualityActivity : AppCompatActivity() {
         )
 
         binding.btnFood.setOnClickListener {
-            if(binding.btnFood.text.toString().trim().isNotEmpty()) {
+            if(binding.namaMakanan.text.toString().trim().isNotEmpty()) {
                 getFoodDatasetFromDB()
             } else {
                 Toast.makeText(this, "Kolom tidak boleh kosong", Toast.LENGTH_SHORT).show()

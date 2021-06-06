@@ -13,6 +13,7 @@ import com.goat.lotech.ui.activity.FoodQualityActivity
 import com.goat.lotech.utils.ChangeBackground
 
 import com.goat.lotech.ui.activity.lifestylefiture.LifestyleActivity
+import com.goat.lotech.ui.activity.marketplace.main.MarketplaceMainActivity
 import com.google.firebase.auth.FirebaseAuth
 
 
@@ -58,6 +59,9 @@ class HomeFragment : Fragment() {
             startActivity(Intent(activity, FoodQualityActivity::class.java ))
         }
 
+        binding.lotechStore.setOnClickListener {
+            startActivity(Intent(activity, MarketplaceMainActivity::class.java))
+        }
 
     }
 }
