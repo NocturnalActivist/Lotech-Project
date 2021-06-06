@@ -5,10 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.goat.lotech.model.ChatModel
-import com.goat.lotech.model.ConsultantVerifyModel
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
-import java.lang.Exception
 
 class ChatViewModel : ViewModel() {
 

@@ -21,7 +21,8 @@
             android:src="@drawable/icon_hello"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/linear"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            android:contentDescription="TODO" />
 
         <LinearLayout
             android:id="@+id/linear"
@@ -255,7 +256,6 @@
                     android:layout_height="wrap_content"
                     android:text="@string/lemak_g"
                     android:textSize="16sp" />
-                />
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
@@ -344,7 +344,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal"
-                android:weightSum="2">
+                android:weightSum="2"
+                android:baselineAligned="false">
 
                 <LinearLayout
                     android:layout_width="0dp"

@@ -15,9 +15,7 @@ import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.github.dhaval2404.imagepicker.ImagePicker
-import com.goat.lotech.R
 import com.goat.lotech.databinding.ActivityMlmainBinding
-import com.goat.lotech.ui.activity.LoginActivity
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import java.io.IOException
@@ -52,8 +50,6 @@ class MLMainActivity : AppCompatActivity() {
         private const val IMAGE_PICK_CAMERA_CODE = 112
         private const val IMAGE_PICK_GALLERY_CODE = 113
     }
-
-    private val cnt = 1
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

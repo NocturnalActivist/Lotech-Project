@@ -181,7 +181,8 @@
                 android:text="Telpon Pakar"
                 android:layout_marginEnd="5dp"
                 android:background="@drawable/round_yellow"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                style="?android:attr/buttonBarButtonStyle" />
 
 
             <Button
@@ -192,7 +193,8 @@
                 android:layout_marginStart="5dp"
                 android:text="Chat Pakar"
                 android:background="@drawable/round_yellow"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black"
+                style="?android:attr/buttonBarButtonStyle" />
 
 
         </LinearLayout>

@@ -2,11 +2,14 @@ package com.goat.lotech.ui.activity.marketplace.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.goat.lotech.R
 import com.goat.lotech.databinding.ActivityMarketplaceMainBinding
 
 class MarketplaceMainActivity : AppCompatActivity(), MarketplaceSortAdapter.OnItemClickCallback {
@@ -21,7 +24,7 @@ class MarketplaceMainActivity : AppCompatActivity(), MarketplaceSortAdapter.OnIt
 
         initViewModel()
         loadButtonSort()
-        loadProduct("")
+        loadProduct("all")
 
         supportActionBar?.title = "Lotech Store"
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -44,7 +47,7 @@ class MarketplaceMainActivity : AppCompatActivity(), MarketplaceSortAdapter.OnIt
         binding.progressBar.visibility = View.VISIBLE
         viewModel.setAllItems(option)
         viewModel.getProductList().observe(this, { product ->
-            if (product != null) {
+            if (product.size > 0) {
                 binding.noData.visibility = View.GONE
                 binding.rvMarketplace.visibility = View.VISIBLE
                 adapter.setData(product)
@@ -83,7 +86,6 @@ class MarketplaceMainActivity : AppCompatActivity(), MarketplaceSortAdapter.OnIt
         when (title) {
             "Makanan" -> {
                 loadProduct("Makanan")
-                Log.d("TES", "HALOOOOO")
             }
             "Minuman" -> {
                 loadProduct("Minuman")
@@ -95,5 +97,20 @@ class MarketplaceMainActivity : AppCompatActivity(), MarketplaceSortAdapter.OnIt
                 loadProduct("Obat")
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        val inflater = menuInflater
+        inflater.inflate(R.menu.menu_marketplace, menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if(item.itemId == R.id.bukatoko) {
+            Toast.makeText(this, "Fitur Buka Toko sedang dikembangkan", Toast.LENGTH_SHORT).show()
+        } else if (item.itemId == R.id.tokosaya){
+            Toast.makeText(this, "Fitur Toko Saya sedang dikembangkan", Toast.LENGTH_SHORT).show()
+        }
+        return super.onOptionsItemSelected(item)
     }
 }

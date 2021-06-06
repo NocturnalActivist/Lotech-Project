@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_lotech"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.DayNight">
-        <activity android:name=".ui.activity.marketplace.main.MarketplaceMainActivity"></activity>
+        <activity android:name=".ui.activity.marketplace.detail.MarketplaceDetailActivity"></activity>
+        <activity android:name=".ui.activity.marketplace.main.MarketplaceMainActivity" />
         <activity android:name=".ui.activity.ConsultPaymentProofActivity" />
         <activity android:name=".ui.activity.ConsultPaymentActivity" />
         <activity android:name=".ui.activity.ConsultHistoryActivity" />

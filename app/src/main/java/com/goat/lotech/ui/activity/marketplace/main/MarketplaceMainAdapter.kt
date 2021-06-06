@@ -1,5 +1,7 @@
 package com.goat.lotech.ui.activity.marketplace.main
 
+import android.annotation.SuppressLint
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -7,6 +9,7 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.goat.lotech.R
 import com.goat.lotech.databinding.ItemProductBinding
+import com.goat.lotech.ui.activity.marketplace.detail.MarketplaceDetailActivity
 
 class MarketplaceMainAdapter : RecyclerView.Adapter<MarketplaceMainAdapter.MarketplaceMainViewHolder>() {
 
@@ -19,10 +22,11 @@ class MarketplaceMainAdapter : RecyclerView.Adapter<MarketplaceMainAdapter.Marke
 
 
     inner class MarketplaceMainViewHolder(private val binding: ItemProductBinding ) : RecyclerView.ViewHolder(binding.root) {
+        @SuppressLint("SetTextI18n")
         fun bind(list: MarketplaceMainModel) {
             with(binding) {
                 productName.text = list.productName
-                price.text = list.price.toString()
+                price.text = "Rp." + list.price.toString()
                 productDesc.text = list.productDescription
                 merchantName.text = list.merchantName
                 rating.text = list.rating.toString()
@@ -32,6 +36,12 @@ class MarketplaceMainAdapter : RecyclerView.Adapter<MarketplaceMainAdapter.Marke
                     .apply(RequestOptions.placeholderOf(R.drawable.ic_baseline_face_24))
                     .error(R.drawable.ic_baseline_face_24)
                     .into(productDp)
+
+                view8.setOnClickListener {
+                    val intent = Intent(itemView.context, MarketplaceDetailActivity::class.java)
+                    intent.putExtra(MarketplaceDetailActivity.EXTRA_ITEM, list)
+                    itemView.context.startActivity(intent)
+                }
 
             }
         }

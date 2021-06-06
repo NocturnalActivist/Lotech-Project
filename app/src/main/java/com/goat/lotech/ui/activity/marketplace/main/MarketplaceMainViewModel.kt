@@ -16,32 +16,62 @@ class MarketplaceMainViewModel : ViewModel() {
     fun setAllItems(productType: String) {
         val listItem = ArrayList<MarketplaceMainModel>()
 
-        try {
-            Firebase.firestore.collection("product")
-                .whereEqualTo("productType",productType)
-                .get()
-                .addOnSuccessListener { product ->
-                    for(document in product) {
-                        val model = MarketplaceMainModel()
-                        model.productId = document.data["productId"].toString()
-                        model.productName = document.data["productName"].toString()
-                        model.productDp = document.data["productDp"].toString()
-                        model.productDescription = document.data["productDescription"].toString()
-                        model.merchantId = document.data["merchantId"].toString()
-                        model.merchantName = document.data["merchantName"].toString()
-                        model.price = document.data["price"].toString().toInt()
-                        model.rating = document.data["rating"].toString().toInt()
+        if(productType == "all") {
+            try {
+                Firebase.firestore.collection("product")
+                    .get()
+                    .addOnSuccessListener { product ->
+                        for(document in product) {
+                            val model = MarketplaceMainModel()
+                            model.productId = document.data["productId"].toString()
+                            model.productName = document.data["productName"].toString()
+                            model.productDp = document.data["productDp"].toString()
+                            model.productDescription = document.data["productDescription"].toString()
+                            model.merchantId = document.data["merchantId"].toString()
+                            model.merchantName = document.data["merchantName"].toString()
+                            model.price = document.data["price"].toString().toInt()
+                            model.rating = document.data["rating"].toString().toInt()
 
-                        listItem.add(model)
+                            listItem.add(model)
+                        }
+                        productList.postValue(listItem)
                     }
-                    productList.postValue(listItem)
-                }
-                .addOnFailureListener {
-                    Log.e(TAG, it.message.toString())
-                }
-        } catch (error: Exception) {
-            error.printStackTrace()
+                    .addOnFailureListener {
+                        Log.e(TAG, it.message.toString())
+                    }
+            } catch (error: Exception) {
+                error.printStackTrace()
+            }
+        } else {
+            try {
+                Firebase.firestore.collection("product")
+                    .whereEqualTo("productType",productType)
+                    .get()
+                    .addOnSuccessListener { product ->
+                        for(document in product) {
+                            val model = MarketplaceMainModel()
+                            model.productId = document.data["productId"].toString()
+                            model.productName = document.data["productName"].toString()
+                            model.productDp = document.data["productDp"].toString()
+                            model.productDescription = document.data["productDescription"].toString()
+                            model.merchantId = document.data["merchantId"].toString()
+                            model.merchantName = document.data["merchantName"].toString()
+                            model.price = document.data["price"].toString().toInt()
+                            model.rating = document.data["rating"].toString().toInt()
+
+                            listItem.add(model)
+                        }
+                        productList.postValue(listItem)
+                    }
+                    .addOnFailureListener {
+                        Log.e(TAG, it.message.toString())
+                    }
+            } catch (error: Exception) {
+                error.printStackTrace()
+            }
         }
+
+
     }
 
     fun getProductList() : LiveData<ArrayList<MarketplaceMainModel>> {

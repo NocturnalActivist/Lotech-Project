@@ -44,7 +44,7 @@ public abstract class ImageClassifier {
     protected Interpreter tflite;
 
     // Labels corresponding to the output of the vision model > 1
-    private List<String> labelList;
+    private final List<String> labelList;
 
     // A ByteBuffer to hold image data, to be feed into tensor flow Lite as inputs
     protected ByteBuffer imgData = null;

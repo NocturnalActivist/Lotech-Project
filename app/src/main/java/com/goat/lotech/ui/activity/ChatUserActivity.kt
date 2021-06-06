@@ -1,19 +1,14 @@
 package com.goat.lotech.ui.activity
 
 import android.annotation.SuppressLint
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.goat.lotech.databinding.ActivityChatUserBinding
 import com.goat.lotech.model.Chat
-import com.goat.lotech.model.Login
 import com.goat.lotech.viewmodel.adapter.MessageAdapter
 import com.goat.lotech.viewmodel.viewmodel.MessageViewModel
 import com.google.firebase.auth.FirebaseAuth

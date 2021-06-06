@@ -13,6 +13,7 @@
         android:layout_height="150dp"
         android:src="@drawable/logo_lotech2"
         android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
+        android:layout_centerHorizontal="true"
+        android:contentDescription="TODO" />
 
 </RelativeLayout>
