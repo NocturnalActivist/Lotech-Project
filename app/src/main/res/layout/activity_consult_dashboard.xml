@@ -13,7 +13,6 @@
         android:layout_height="wrap_content"
         android:padding="16dp">
 
-
         <View
             android:id="@+id/view"
             android:layout_width="match_parent"
